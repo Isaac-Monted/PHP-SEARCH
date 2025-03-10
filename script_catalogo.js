@@ -35,46 +35,11 @@ export function ChangeSearch() {
             .then(response => response.json()) // Espera la respuesta como JSON
             .then(data => {
                 console.log("Datos obtenidos: ", data);
-                updateDOMWithProducts(data); // Función que actualizará el DOM con los productos
+                widgets.updateDOMWithProducts(data); // Función que actualizará el DOM con los productos
             })
             .catch(error => {
                 console.error("Error al buscar productos:", error);
             });
     }
 };
-
-function updateDOMWithProducts(products) {
-    const productContainer = document.getElementById("product-cards"); // El contenedor donde se mostrarán los productos
-
-    // Limpiar los productos anteriores
-    productContainer.innerHTML = '';
-
-    // Comprobar si hay un error en los datos (por ejemplo, "error" en la respuesta)
-    if (products.error) {
-        productContainer.innerHTML = `<p>${products.error}</p>`; // Mostrar el mensaje de error en el DOM
-        return;
-    }
-
-    // Si no hay productos, mostrar un mensaje adecuado
-    if (products.length === 0) {
-        productContainer.innerHTML = '<p>No se encontraron productos.</p>';
-        return;
-    }
-
-    // Recorrer los productos y crear elementos para mostrarlos
-    products.forEach(product => {
-        const productCard = document.createElement("div");
-        productCard.classList.add("product-card");
-
-        // Agregar contenido a la tarjeta del producto
-        productCard.innerHTML = `
-            <h3>${product.NOMBRE}</h3>
-            <p>${product.DESCRIPCION}</p>
-            <p>Precio: $${product.PRECIO}</p>
-        `;
-
-        // Agregar la tarjeta del producto al contenedor
-        productContainer.appendChild(productCard);
-    });
-}
 
