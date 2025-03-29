@@ -3,3 +3,12 @@
 body {
     align-items: start;
 }
+
+button:hover {
+    background-color: rgba(59, 59, 59, 0.5);
+}
+
+button:active {
+    background-color: rgba(59, 59, 59, 0.808);
+    color: white;
+}

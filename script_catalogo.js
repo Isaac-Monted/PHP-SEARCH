@@ -35,7 +35,6 @@ export function ProductSearch() {
 export function ChangeSearch() {
     const searchQuery = document.getElementById("search").value; // Obtiene el texto mientras el usuario escribe
     console.log("El texto de búsqueda cambió a: " + searchQuery);
-    console.log(searchQuery.length);
 
     // CONSULTA AJAX
     if (searchQuery.length > 0) {  // Solo hacer la búsqueda si el término es mayor a 0 caracteres
@@ -57,3 +56,27 @@ export function ChangeSearch() {
     }
 };
 
+
+export function ClickButtonCategories(categoria) {
+    const searchQuery = categoria; // Obtiene la categoria del boton clickeado
+    console.log("Categoria seleccionada: " + searchQuery);
+
+    // CONSULTA AJAX
+    if (searchQuery.length > 0) {  // Solo hacer la búsqueda si el término es mayor a 0 caracteres
+        // Hacer la solicitud GET al archivo PHP con el parámetro search_term
+        fetch(`getData.php?action=getProductByCategoria&id_categoria=${encodeURIComponent(searchQuery)}`)
+            .then(response => response.json()) // Espera la respuesta como JSON
+            .then(data => {
+                console.log("Datos obtenidos: ", data);
+                widgets.updateDOMWithProducts(data); // Función que actualizará el DOM con los productos
+            })
+            .catch(error => {
+                console.error("Error al buscar productos:", error);
+            });
+    }else{
+        // Si el campo de búsqueda está vacío, puedes limpiar los productos o mostrar un mensaje
+        const productContainer = document.getElementById("product-cards"); // El contenedor donde se mostrarán los productos
+        // Limpiar los productos anteriores
+        productContainer.innerHTML = '';
+    }
+};

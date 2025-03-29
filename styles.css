@@ -21,7 +21,7 @@
     padding: 20px;
 }
 
-#search-bar {
+.search-bar {
     padding: 20px;
     padding-left: 30px;
 }
@@ -39,4 +39,11 @@
     padding: 10px;
     margin-top: 3vh;
     margin-bottom: 3vh;
+}
+
+.boton_categoria {
+    width: 100%;
+    height: 90%;
+    background-color: transparent;
+    border-color: transparent;
 }

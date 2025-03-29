@@ -2,11 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$servername = "";
-$username ="";
-$password =""
-$dbname = "";
-$port =3306;
+
 
 // Crear la conexión
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
@@ -96,6 +92,24 @@ function getProductById($conn, $id_producto) {
     return $data;
 }
 
+// Función para obtener productos por su categoria
+function getProductByCategoria($conn, $id_categoria) {
+    $sql = "SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, MARCA FROM CATALOGO WHERE ID_CATEGORIA = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id_categoria);  // "i" significa un parámetro entero
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    $data = array();
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $data[] = $row;
+        }
+    }
+    
+    return $data;
+}
+
 // Función para obtener productos con búsqueda aproximada
 function searchProductos($conn, $search_term) {
     $sql = "SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, MARCA FROM CATALOGO WHERE NOMBRE LIKE ?";
@@ -128,6 +142,9 @@ if (isset($_GET['action'])) {
     } elseif ($action == 'getProductById' && isset($_GET['id_producto'])) {
         $id_producto = mysqli_real_escape_string($conn, $_GET['id_producto']);
         $data = getProductById($conn, $id_producto);
+    }elseif ($action == 'getProductByCategoria' && isset($_GET['id_categoria'])) {
+        $id_categoria = mysqli_real_escape_string($conn, $_GET['id_categoria']);
+        $data = getProductByCategoria($conn, $id_categoria);
     } elseif ($action == 'searchProductos' && isset($_GET['search_term'])) {
         $search_term = mysqli_real_escape_string($conn, $_GET['search_term']);
         $data = searchProductos($conn, $search_term);

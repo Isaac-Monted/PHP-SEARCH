@@ -21,10 +21,23 @@ export function GenerarColumnaCategorias(categorias){
         const categoriaCard = document.createElement("div");
         categoriaCard.classList.add("product-cards-one");
 
-        // Agregar contenido a la tarjeta de la categoria
-        categoriaCard.innerHTML = `
-        <h3>${categoria.NOMBRE}</h3>
-        `;
+        // Crear el botón para la categoría
+        const botonCategoria = document.createElement("button");
+        botonCategoria.classList.add("boton_categoria");
+        botonCategoria.textContent = categoria.NOMBRE;
+
+        // Agregar el evento onclick al botón
+        botonCategoria.addEventListener("click", () => {
+            // Aquí puedes pasar los parámetros que quieras, por ejemplo:
+            console.log(`Botón clickeado: ${categoria.NOMBRE}`);
+            // Llamar a una función, por ejemplo, una función que maneje lo que sucede al hacer clic
+            console.log(categoria.ID_CATEGORIA)
+            // Por ejemplo, enviar la categoría seleccionada a una función
+            ClickButtonCategories(categoria.ID_CATEGORIA);  // Llamada a la función con el objeto de categoría
+        });
+
+        // Agregar el botón al contenedor de la tarjeta
+        categoriaCard.appendChild(botonCategoria);
 
         // Agregar la tarjeta de la categoria al contenedor
         containerCategorias.appendChild(categoriaCard);
