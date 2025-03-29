@@ -11,13 +11,21 @@ document.addEventListener('DOMContentLoaded', function() {
 function OnLoadPage() {
     console.log("La página ha cargado completamente!"); // Mensaje para comprobar que se esta ejecutando al cargar
     try {
-        widgets.GenerarColumnaCategorias(); // Función que genera las categorías
+        LoadColumCategorias(); // Función que genera las categorías
         widgets.GenerarContenedorProductos(); // Función que genera los productos
     } catch (error) {
         console.error("Hubo un error al cargar los datos:", error);
     }
 };
 
+export function LoadColumCategorias(){
+    fetch(`getData.php?action=getAllCategorias`)
+        .then(respoinse => respoinse.json()) // Espera la respuesta como JSON
+        .then(data => {
+            console.log("Datos obtenidos: ", data);
+            widgets.GenerarColumnaCategorias(data); // Función que actualizará el DOM con las categorias
+        })
+};
 
 export function ProductSearch() {
     // Llamamos a la funcion changeSearch para reciclar codigo
@@ -27,6 +35,7 @@ export function ProductSearch() {
 export function ChangeSearch() {
     const searchQuery = document.getElementById("search").value; // Obtiene el texto mientras el usuario escribe
     console.log("El texto de búsqueda cambió a: " + searchQuery);
+    console.log(searchQuery.length);
 
     // CONSULTA AJAX
     if (searchQuery.length > 0) {  // Solo hacer la búsqueda si el término es mayor a 0 caracteres
@@ -40,6 +49,11 @@ export function ChangeSearch() {
             .catch(error => {
                 console.error("Error al buscar productos:", error);
             });
+    }else{
+        // Si el campo de búsqueda está vacío, puedes limpiar los productos o mostrar un mensaje
+        const productContainer = document.getElementById("product-cards"); // El contenedor donde se mostrarán los productos
+        // Limpiar los productos anteriores
+        productContainer.innerHTML = '';
     }
 };
 
