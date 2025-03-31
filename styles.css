@@ -49,7 +49,7 @@ button {
     padding: 20px;
 } 
 
-#search-bar {
+.search-bar {
     padding: 20px;
     padding-left: 30px;
 }
@@ -68,3 +68,4 @@ button {
     margin-top: 3vh;
     margin-bottom: 3vh;
 }
+
