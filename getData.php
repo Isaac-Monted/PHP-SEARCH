@@ -2,12 +2,11 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$servername = "108.178.43.98";
-$username ="pisuena_pisuena";
-$password ="1*Q!5PPS?9L$";
-$dbname = "pisuena_cotizador";
+$servername = "";
+$username ="";
+$password =""
+$dbname = "";
 $port =3306;
-
 // Crear la conexión
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
 // Establecer la codificación de caracteres de la conexión a UTF-8
