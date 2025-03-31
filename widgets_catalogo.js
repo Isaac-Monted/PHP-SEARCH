@@ -1,3 +1,6 @@
+// Cargar las funciones de eventos de gargar las diferentes paginas
+import { ClickButtonCategories } from './script_catalogo.js';
+
 // Funcion que genera el contenido con las categorias consultadas de la base
 export function GenerarColumnaCategorias(categorias){
     console.log("se a generado las categorias");

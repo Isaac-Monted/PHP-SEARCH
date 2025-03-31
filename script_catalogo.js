@@ -62,7 +62,7 @@ export function ClickButtonCategories(categoria) {
     console.log("Categoria seleccionada: " + searchQuery);
 
     // CONSULTA AJAX
-    if (searchQuery.length > 0) {  // Solo hacer la búsqueda si el término es mayor a 0 caracteres
+    if (searchQuery> 0) {  // Solo hacer la búsqueda si el término es mayor a 0 caracteres
         // Hacer la solicitud GET al archivo PHP con el parámetro search_term
         fetch(`getData.php?action=getProductByCategoria&id_categoria=${encodeURIComponent(searchQuery)}`)
             .then(response => response.json()) // Espera la respuesta como JSON
