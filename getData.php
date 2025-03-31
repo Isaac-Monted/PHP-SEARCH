@@ -7,7 +7,6 @@ $username ="";
 $password =""
 $dbname = "";
 $port =3306;
-
 // Crear la conexión
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
 // Establecer la codificación de caracteres de la conexión a UTF-8
