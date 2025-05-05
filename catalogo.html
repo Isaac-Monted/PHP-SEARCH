@@ -1,68 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
-<head> <!-- Revisar si si esta bien ya no me acuerdo de como es la letania xd-->
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de productos</title>
+    <title>Ferretera Rio Pisuena | Cotizador Web</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./elementals.css">
+    <!--  <link href="css/base.css" rel="stylesheet" /> -->
 </head>
 <body>
-
-<!-- Navigation -->
+    <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5 shadow">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <a class="navbar-brand" href="#">Ferretera Rio Pisueña | Cotizador de Productos </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="index.html">Regresar a la pagina principal</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  
   <!-- Page Content -->
   <div class="container">
     <div class="card border-0 shadow my-5">
       <div class="card-body p-5">
-        
     <div class="caja1"> <!-- Contenedor principal -->
-
         <div class="left-column"> <!-- Columna izquierda -->
             <section>
                 <h1>Categorías</h1>
                 <div id="list_categories"></div> <!-- Aquí se llenarán las categorías dinámicamente -->
             </section>
         </div>
-
         <div class="right-column"> <!-- Columna derecha -->
             <section class="search-bar"> <!-- Barra de búsqueda -->
                 <input type="text" id="search" placeholder="Buscar..."> <!-- Casilla para buscar -->
                 <button id="searchButton">Buscar</button> <!-- Botón que manda la solicitud -->
             </section>
-
             <section id="Categories_row" class="categories-row"></section> <!-- Fila con los botones de categorías dinámicas Nota: Aquí se pueden colocar los botones de categorías -->
-
             <section id="product-cards" class="product-cards"></section> <!-- Contenedor para las tarjetas de productos Nota: Aquí se mostrarían las tarjetas de productos -->
         </div>
-
     </div>
-
-    
     <script type="module">
         import { ProductSearch, ChangeSearch, ClickButtonCategories } from './script_catalogo.js';  // Importar las funciones desde el módulo
 
