@@ -29,7 +29,7 @@ export function LoadColumCategorias(){
 
 export function ProductSearch() {
     // Llamamos a la funcion changeSearch para reciclar codigo
-    ChangeSearch()
+    ChangeSearch();
 };
 
 export function ChangeSearch() {

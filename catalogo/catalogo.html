@@ -43,11 +43,15 @@
 </body>
 
 <script type="module">
-  import { ProductSearch, ChangeSearch, ClickButtonCategories } from './script_catalogo.js';  // Importar las funciones desde el módulo
+  import * as Catalogo from './script_catalogo.js';  // Importar las funciones desde el módulo
 
   // Asocia los eventos con los elementos del HTML
-  document.getElementById("searchButton").addEventListener("click", ProductSearch); // Botón de búsqueda
-  document.getElementById("search").addEventListener("input", ChangeSearch); // Campo de búsqueda
+  document.getElementById("searchButton").addEventListener("click", function(){
+    Catalogo.ProductSearch();
+  }); // Botón de búsqueda
+  document.getElementById("search").addEventListener("input", function(){
+    Catalogo.ChangeSearch();
+  }); // Campo de búsqueda
 </script>
 
 <script>

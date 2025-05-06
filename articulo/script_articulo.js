@@ -41,3 +41,7 @@ function fetchProductDetails(productId) {
             window.location.href = "../catalogo/catalogo.html"; // Redirige a la página principal.
         });
 }
+
+export function AgregarAlCarrito(){
+    alert("Se a agregado al carrito");
+}

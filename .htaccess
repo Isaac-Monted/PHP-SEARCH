@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Redirección a HTTPS
+RewriteCond %{HTTP_HOST} ^teampcmx\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://teampcmx.com/$1 [R,L]
+
+# Quitar .php
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)$ $1.php [L]
+
+# Quitar .html
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)$ $1.html [L]
+
+# Páginas de error personalizadas
+ErrorDocument 404 /FIERROS/error/404.html
+ErrorDocument 403 /FIERROS/error/403.html
+ErrorDocument 500 /FIERROS/error/500.html
+
+</IfModule>

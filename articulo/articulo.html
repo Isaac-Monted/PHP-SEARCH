@@ -18,24 +18,40 @@
     <div class="container">
         <div class="card border-0 shadow my-5">
             <div class="card-body p-5">
-        <div class="container"> <!-- Contenedor principal -->
+                <div class="container"> <!-- Contenedor principal -->
 
-            <div class="left-column"> <!-- Columna -->
-                <section>
-                    <div id="product-cards-article-only"></div> <!-- Aquí se llenarán el producto seleccionado -->
-                </section>
-            </div>
+                    <div class="left-column"> <!-- Columna -->
+                        <section>
+                            <div id="product-cards-article-only"></div> <!-- Aquí se llenarán el producto seleccionado -->
+                        </section>
+                    </div>
+                    <div>
+                        <section>
+                            <button id="BotonAgregar">Agregar al carrito</button>
+                            <button id="BotonCarrito">Ir al carrito</button>
+                        </section>
+                    </div>
 
-        </div>
+                </div>
             </div>
         </div>
     </div>
+
     <footer id="FooterArticulo"></footer>
 </body>
 
-<script type="module" src='./script_articulo.js';></script> <!-- Importar las funciones desde el módulo -->
+<script type="module">
+    import * as Articulos from './script_articulo.js';
+    document.getElementById("BotonAgregar").addEventListener("click", function() {
+        Articulos.AgregarAlCarrito();
+    });
+</script> <!-- Importar las funciones desde el módulo -->
 
 <script>
+    document.getElementById("BotonCarrito").addEventListener("click", function() {
+        window.location.href = `../cotizador/cotizador.html`;
+    });
+
     async function cargarHTML(id, url) {
         const res = await fetch(url);
         const html = await res.text();
