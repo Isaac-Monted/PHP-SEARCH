@@ -19,7 +19,7 @@ function OnLoadPage() {
 };
 
 export function LoadColumCategorias(){
-    fetch(`getData.php?action=getAllCategorias`)
+    fetch(`../backend/getData.php?action=getAllCategorias`)
         .then(respoinse => respoinse.json()) // Espera la respuesta como JSON
         .then(data => {
             console.log("Datos obtenidos: ", data);
@@ -39,7 +39,7 @@ export function ChangeSearch() {
     // CONSULTA AJAX
     if (searchQuery.length > 0) {  // Solo hacer la búsqueda si el término es mayor a 0 caracteres
         // Hacer la solicitud GET al archivo PHP con el parámetro search_term
-        fetch(`getData.php?action=searchProductos&search_term=${encodeURIComponent(searchQuery)}`)
+        fetch(`../backend/getData.php?action=searchProductos&search_term=${encodeURIComponent(searchQuery)}`)
             .then(response => response.json()) // Espera la respuesta como JSON
             .then(data => {
                 console.log("Datos obtenidos: ", data);
@@ -64,7 +64,7 @@ export function ClickButtonCategories(categoria) {
     // CONSULTA AJAX
     if (searchQuery> 0) {  // Solo hacer la búsqueda si el término es mayor a 0 caracteres
         // Hacer la solicitud GET al archivo PHP con el parámetro search_term
-        fetch(`getData.php?action=getProductByCategoria&id_categoria=${encodeURIComponent(searchQuery)}`)
+        fetch(`../backend/getData.php?action=getProductByCategoria&id_categoria=${encodeURIComponent(searchQuery)}`)
             .then(response => response.json()) // Espera la respuesta como JSON
             .then(data => {
                 console.log("Datos obtenidos: ", data);

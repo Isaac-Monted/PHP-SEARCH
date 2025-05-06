@@ -25,12 +25,12 @@ export function GenerarColumnaCategorias(categorias){
         categoriaCard.classList.add("product-cards-one");
 
         // Crear el botón para la categoría
-        const botonCategoria = document.createElement("button");
+        const botonCategoria = document.createElement("div");
         botonCategoria.classList.add("boton_categoria");
         botonCategoria.textContent = categoria.NOMBRE;
 
         // Agregar el evento onclick al botón
-        botonCategoria.addEventListener("click", () => {
+        categoriaCard.addEventListener("click", () => {
             // Aquí puedes pasar los parámetros que quieras, por ejemplo:
             console.log(`Botón clickeado: ${categoria.NOMBRE}`);
             // Llamar a una función, por ejemplo, una función que maneje lo que sucede al hacer clic
@@ -73,8 +73,12 @@ export function updateDOMWithProducts(products) {
 
     // Recorrer los productos y crear elementos para mostrarlos
     products.forEach(product => {
-        const productCard = document.createElement("div");
+        const productCard = document.createElement("button");
         productCard.classList.add("product-cards-one");
+
+        productCard.onclick = () => {
+            window.location.href = `../articulo/articulo.html?id=${product.ID_PRODUCTO}`;
+        };
 
         if (product.MARCA == "UNDEFINED"){
             marca = ""
@@ -84,7 +88,7 @@ export function updateDOMWithProducts(products) {
 
         // Agregar contenido a la tarjeta del producto
         productCard.innerHTML = `
-        <h3><a href="articulo.html?id=${product.ID_PRODUCTO}" target="_blank">${product.NOMBRE}</a></h3>
+        <h3>${product.NOMBRE}</h3>
         <p>${product.DESCRIPCION}</p>
         <p>Marca: ${marca}</p>
         `;

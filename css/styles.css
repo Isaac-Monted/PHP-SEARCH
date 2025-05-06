@@ -1,6 +1,6 @@
 @import url('var_colores.css');
 body{
-    background: url('img/tapete-metal.jpg') no-repeat center center fixed;
+    background: url('../img/tapete-metal.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -62,7 +62,25 @@ button {
     margin-bottom: 3vh;
 }
 
+.boton_categoria{
+  padding: 10px 20px;
+  margin: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-width: 2px;
+  border-style: outset;
+  border-color: black;
+  border-image: initial;
+}
 
+.boton_categoria:hover {
+  background-color: rgba(59, 59, 59, 0.5);
+}
+
+.boton_categoria:active {
+  background-color: rgba(59, 59, 59, 0.808);
+  color: white;
+}
 
 header {
     position: relative;

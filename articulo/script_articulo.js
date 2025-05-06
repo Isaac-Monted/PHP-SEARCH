@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Si no hay ID en la URL, lanzamos un error de depuración y mostramos un mensaje al usuario
         console.error("Error: No se proporcionó un ID de producto en la URL.");
         alert("No se proporcionó un ID de producto. Por favor, asegúrate de que la URL sea correcta.");
-        window.location.href = "/FIERROS/catalogo.html"; // Redirige a la página principal.
+        window.location.href = "../catalogo/catalogo.html"; // Redirige a la página principal.
     }
 });
 
@@ -23,7 +23,7 @@ function getProductIdFromURL() {
 // Función que hace el fetch para obtener los datos del producto
 function fetchProductDetails(productId) {
     console.log("Id:", encodeURIComponent(productId));
-    fetch(`getData.php?action=getProductById&id_producto=${encodeURIComponent(productId)}`) // URL API
+    fetch(`../backend/getData.php?action=getProductById&id_producto=${encodeURIComponent(productId)}`) // URL API
         .then(response => response.json())
         .then(data => {
             if (data) {
@@ -32,12 +32,12 @@ function fetchProductDetails(productId) {
             } else {
                 console.error("Error: No se encontraron datos para el producto con ID:", productId);
                 alert("No se encontraron datos para este producto. Intenta nuevamente más tarde.");
-                window.location.href = "/FIERROS/catalogo.html"; // Redirige a la página principal.
+                window.location.href = "../catalogo/catalogo.html"; // Redirige a la página principal.
             }
         })
         .catch(error => {
             console.error('Error al obtener los datos del producto:', error);
             alert("Hubo un error al intentar cargar los detalles del producto.");
-            window.location.href = "/FIERROS/catalogo.html"; // Redirige a la página principal.
+            window.location.href = "../catalogo/catalogo.html"; // Redirige a la página principal.
         });
 }
