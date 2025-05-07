@@ -1,4 +1,5 @@
 // Cargar las funciones de eventos de gargar las diferentes paginas
+import * as Carrito from '../cotizador/script_cotizador.js';
 import * as widgets from './widgets_articulo.js';
 
 // Esta función se ejecutará cuando el DOM esté completamente cargado
@@ -12,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         alert("No se proporcionó un ID de producto. Por favor, asegúrate de que la URL sea correcta.");
         window.location.href = "../catalogo/catalogo.html"; // Redirige a la página principal.
     }
+
+    Carrito.InicializarObjeto();
 });
 
 // Función para obtener el ID del producto desde la URL
@@ -43,5 +46,25 @@ function fetchProductDetails(productId) {
 }
 
 export function AgregarAlCarrito(){
-    alert("Se a agregado al carrito");
+    fetch(`../backend/getData.php?action=getProductById&id_producto=${encodeURIComponent(getProductIdFromURL())}`) // URL API
+        .then(response => response.json())
+        .then(data => {
+            if (data) {
+                console.log("Datos obtenidos: ", data);
+                data.forEach(Articulo => {
+                    Carrito.AgregarArticuloCarrito(Articulo.ID_PRODUCTO, Articulo.NOMBRE, 1)
+                }); // Llamamos a la función que actualiza el DOM con los datos
+                alert("Se a agregado al carrito");
+            } else {
+                console.error("Error: No se encontraron datos para el producto con ID:", productId);
+                alert("No se pudo agregar al carrito. Intenta nuevamente más tarde.");
+                window.location.href = "../catalogo/catalogo.html"; // Redirige a la página principal.
+            }
+            Carrito.LeerArticuloCarrito();
+        })
+        .catch(error => {
+            console.error('Error al agregar el producto:', error);
+            alert("Hubo un error al intentar cargar el producto al carrito.");
+            window.location.href = "../catalogo/catalogo.html"; // Redirige a la página principal.
+        });
 }
