@@ -20,13 +20,36 @@
         <div class="card border-0 shadow my-5">
             <div class="card-body p-5">
                 <div class="container"> <!-- Contenedor principal -->
-                    <h1>Cotizador</h1>
+                    
+                    <div class="left-column"> <!-- Columna -->
+                        <section>
+                            <h1>Cotizador</h1>
+                            <!-- <div id="product-cards-article-only"></div>  Aquí se llenarán el producto seleccionado -->
+                        </section>
+                    </div>
+                    <div>
+                        <section>
+                            <button id="BotonEliminarCarrito">Eliminar el carrito</button>
+                            <button id="BotonMostrarCarrito">Mostrar el carrito</button>
+                        </section>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
     <footer id="FooterCotizador"></footer>
 </body>
+
+<script type="module">
+    import * as Carrito from './script_cotizador2.js';
+    document.getElementById("BotonEliminarCarrito").addEventListener("click", function() {
+        Carrito.BorrarCarrito();
+    });
+    document.getElementById("BotonMostrarCarrito").addEventListener("click", function() {
+        Carrito.MostrarTodoElCarrito();
+    });
+</script>
 
 <script>
     async function cargarHTML(id, url) {
