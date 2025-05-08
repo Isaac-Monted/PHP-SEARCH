@@ -1,8 +1,9 @@
 // Cargar las funciones de los eventos de cargar las diferente Paginas
 import * as CarritoF from './script_cotizador.js';
+import * as widgets from './widgets_cotizador.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-    CarritoF.LeerArticuloCarrito();
+    ColocarLosDatosDelCarrito();
 });
 
 export function BorrarCarrito() {
@@ -10,5 +11,10 @@ export function BorrarCarrito() {
 }
 
 export function MostrarTodoElCarrito() {
-    CarritoF.LeerArticuloCarrito();
+    alert("Se ha enviado tu cotizacion")
+}
+
+function ColocarLosDatosDelCarrito() {
+    const Descripcion = CarritoF.LeerArticuloCarrito();
+    widgets.ColocarElCarritoEnLaPagina(Descripcion);
 }
