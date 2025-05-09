@@ -78,6 +78,15 @@ button {
     margin-bottom: 3vh;
 }
 
+.casillaNumeros {
+  /*width: 10px;*/
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #585858;
+  border-radius: 4px;
+  /*box-sizing: border-box;*/
+}
+
 .boton_categoria{
   padding: 10px 20px;
   margin: 20px;
@@ -96,6 +105,21 @@ button {
 .boton_categoria:active {
   background-color: rgba(59, 59, 59, 0.808);
   color: white;
+}
+
+.button-group button {
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+.button-group button:hover {
+    background-color: #0056b3;
 }
 
 header {

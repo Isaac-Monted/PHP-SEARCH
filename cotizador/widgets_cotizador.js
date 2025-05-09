@@ -1,3 +1,4 @@
+import * as controller from "./script_cotizador2.js";
 
 
 export function ColocarElCarritoEnLaPagina(descripcion){
@@ -35,9 +36,9 @@ export function ColocarElCarritoEnLaPagina(descripcion){
                         <p>${Articulos.Nombre}</p>
                     </div>
                     <div>
-                        <input type="text" id="Cantidad${Articulos.Id}" name="Cantidad${Articulos.Id}" value=${Articulos.Cantidad} style="text-align: center;" disabled>
-                        <button id="BotonIncremento${Articulos.Id}"> + </button>
+                        <input class="casillaNumeros" type="text" id="Cantidad${Articulos.Id}" name="Cantidad${Articulos.Id}" value=${Articulos.Cantidad} style="text-align: center;" disabled>
                         <button id="BotonDecremento${Articulos.Id}"> - </button>
+                        <button id="BotonIncremento${Articulos.Id}"> + </button>
                     </div>
                     <div>
 
@@ -61,15 +62,18 @@ export function ColocarElCarritoEnLaPagina(descripcion){
         const btnQuitar = document.getElementById(`BotonQuitar${Articulos.Id}`);
 
         btnIncremento.addEventListener('click', () => {
-            console.log("Incremento")
+            console.log("Incremento");
+            controller.SumarALaCantidadDelProducto(key, Articulos.Id, Articulos.Nombre, Articulos.Cantidad);
         });
 
         btnDecremento.addEventListener('click', () => {
-            console.log("Decremento")
+            console.log("Decremento");
+            controller.RestarALaCantidadDelProducto(key, Articulos.Id, Articulos.Nombre, Articulos.Cantidad);
         });
 
         btnQuitar.addEventListener('click', () => {
-            console.log("Quitar")
+            console.log("Quitar" + key);
+            controller.QuitarArticuloDelCarrito(key);
         });
     });
 }

@@ -22,7 +22,7 @@ export function LoadColumCategorias(){
     fetch(`../backend/getData.php?action=getAllCategorias`)
         .then(respoinse => respoinse.json()) // Espera la respuesta como JSON
         .then(data => {
-            console.log("Datos obtenidos: ", data);
+            //console.log("Datos obtenidos: ", data);
             widgets.GenerarColumnaCategorias(data); // Función que actualizará el DOM con las categorias
         })
 };
@@ -42,7 +42,7 @@ export function ChangeSearch() {
         fetch(`../backend/getData.php?action=searchProductos&search_term=${encodeURIComponent(searchQuery)}`)
             .then(response => response.json()) // Espera la respuesta como JSON
             .then(data => {
-                console.log("Datos obtenidos: ", data);
+                //console.log("Datos obtenidos: ", data);
                 widgets.updateDOMWithProducts(data); // Función que actualizará el DOM con los productos
             })
             .catch(error => {
@@ -67,7 +67,7 @@ export function ClickButtonCategories(categoria) {
         fetch(`../backend/getData.php?action=getProductByCategoria&id_categoria=${encodeURIComponent(searchQuery)}`)
             .then(response => response.json()) // Espera la respuesta como JSON
             .then(data => {
-                console.log("Datos obtenidos: ", data);
+                //console.log("Datos obtenidos: ", data);
                 widgets.updateDOMWithProducts(data); // Función que actualizará el DOM con los productos
             })
             .catch(error => {

@@ -45,6 +45,7 @@
     import * as Carrito from './script_cotizador2.js';
     document.getElementById("BotonEliminarCarrito").addEventListener("click", function() {
         Carrito.BorrarCarrito();
+        Carrito.ColocarLosDatosDelCarrito();
     });
     document.getElementById("BotonMostrarCarrito").addEventListener("click", function() {
         Carrito.MostrarTodoElCarrito();

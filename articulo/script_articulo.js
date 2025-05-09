@@ -30,7 +30,7 @@ function fetchProductDetails(productId) {
         .then(response => response.json())
         .then(data => {
             if (data) {
-                console.log("Datos obtenidos: ", data);
+                //console.log("Datos obtenidos: ", data);
                 widgets.updateProductDOM(data); // Llamamos a la función que actualiza el DOM con los datos
             } else {
                 console.error("Error: No se encontraron datos para el producto con ID:", productId);
@@ -50,7 +50,7 @@ export function AgregarAlCarrito(){
         .then(response => response.json())
         .then(data => {
             if (data) {
-                console.log("Datos obtenidos: ", data);
+                //console.log("Datos obtenidos: ", data);
                 data.forEach(Articulo => {
                     Carrito.AgregarArticuloCarrito(Articulo.ID_PRODUCTO, Articulo.NOMBRE, 1)
                 }); // Llamamos a la función que actualiza el DOM con los datos

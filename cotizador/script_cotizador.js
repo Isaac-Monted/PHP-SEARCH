@@ -63,7 +63,7 @@ export function EditarArticuloCarrito(Id_storage, Id_producto, Nombre, Cantidad)
 
 export function LeerArticuloCarrito(){
     let Productos = JSON.parse(localStorage.getItem('productos')) || {0:0};
-    console.log(Productos);
+    //console.log(Productos);
     return Productos;
 }
 

@@ -1,12 +1,22 @@
 <?php
+
+// Cargar el autoload de Composer
+require __DIR__ . '/../vendor/autoload.php';
+
+// Cargar las variables de entorno desde el archivo .env
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__, 'credenciales.env');
+$dotenv->load();
+
+// Activar el reporte de errores para depuración
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$servername = "";
-$username ="";
-$password =""
-$dbname = "";
-$port =3306;
+// Obtener las variables del archivo .env
+$servername = $_ENV['DB_HOST']; 
+$username = $_ENV['DB_USER'];
+$password = $_ENV['DB_PASS']; 
+$dbname = $_ENV['DB_NAME'];
+$port = $_ENV['DB_PORT']; 
 
 // Puerto por defecto de MySQL es 3306
 
