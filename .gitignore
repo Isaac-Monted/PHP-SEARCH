@@ -1,3 +1,5 @@
 credenciales.txt
 pruebas/
 *.env
+vendor/composer/
+vendor/autoload.php
