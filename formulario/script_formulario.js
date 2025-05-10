@@ -32,6 +32,7 @@ async function EnviarCotizacionCorreo() {
         let dato = {
             "nombre":Nombre.value,
             "correo":Correo.value,
+            "telefono":Telefono.value,
             "direccion":Direccion.value,
             "empresa":Empresa.value,
             "cotizacion":JSON.stringify(Contenido)
@@ -57,6 +58,9 @@ async function EnviarCotizacionCorreo() {
             // Mostrar mensaje de éxito o error
             if (result.success) {
                 alert(result.message); // Mostrar mensaje si fue exitoso
+                LimpiarFormulario(); // Limpiar el formulario
+                Carrito.EliminarTodoElCarrito(); // Limpiar el carrito
+                window.location.href = '../main/index.html';
             } else {
                 alert(result.message); // Mostrar mensaje de error
             }
@@ -69,4 +73,17 @@ async function EnviarCotizacionCorreo() {
 
 function EnviarCotizacionBase() {
 
+}
+
+function LimpiarFormulario() {
+    // Lista con campos del formulario
+    const campos = ["NombreFormulario", "CorreoFormulario", "TelefonoFormulario", "DireccionFormulario", "EmpresaFormulario"];
+
+    // Iterar sobre cada campo para limpiarlo
+    campos.forEach(id => {
+        const elemento = document.getElementById(id);
+        if (elemento) {
+            elemento.value = "";
+        }
+    });
 }
