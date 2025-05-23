@@ -22,6 +22,8 @@ export function GenerarColumnaCategorias(categorias){
     // Recorrer los productos y crear elementos para mostrarlos
     categorias.forEach(categoria => {
         const categoriaCard = document.createElement("div");
+
+               
         categoriaCard.classList.add("product-cards-one");
 
         // Crear el botón para la categoría
