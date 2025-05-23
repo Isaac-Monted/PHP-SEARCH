@@ -68,7 +68,7 @@ button {
     
 }
 
-.product-cards-one {
+.product-cards-one { /* listas de categorias*/
     background-color:rgba(156, 156, 156, 0.28);;
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.28);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.28);
@@ -174,4 +174,33 @@ header {
     header video {
       display: none;
     }
+  }
+
+
+  .btn-stil{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+
+  }
+  .btn-stil-1{
+    background-color: #008CBA; /* Blue */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
   }
