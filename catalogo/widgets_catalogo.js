@@ -9,26 +9,29 @@ export function GenerarColumnaCategorias(categorias){
 
     // Comprobar si hay un error en los datos (por ejemplo, "error" en la respuesta)
     if (categorias.error) {
-        containerCategorias.innerHTML = `<p>${categorias.error}</p>`; // Mostrar el mensaje de error en el DOM
+        containerCategorias.innerHTML = `<li>${categorias.error}</li>`; // Mostrar el mensaje de error en el DOM
         return;
     }
 
     // Si no hay categorias, mostrar un mensaje adecuado
     if (categorias.length === 0) {
-        containerCategorias.innerHTML = '<p>No se encontraron categorias.</p>';
+        containerCategorias.innerHTML = '<li>No se encontraron categorias.</li>';
         return;
     }
 
     // Recorrer los productos y crear elementos para mostrarlos
     categorias.forEach(categoria => {
-        const categoriaCard = document.createElement("div");
+        if(categoria.NOMBRE == "sin categoria"){
+            return;
+        }
+        const categoriaCard = document.createElement("li");
 
                
-        categoriaCard.classList.add("product-cards-one");
+        //categoriaCard.classList.add("product-cards-one");
 
         // Crear el botón para la categoría
-        const botonCategoria = document.createElement("div");
-        botonCategoria.classList.add("boton_categoria");
+        const botonCategoria = document.createElement("a");
+        //botonCategoria.classList.add("boton_categoria");
         botonCategoria.textContent = categoria.NOMBRE;
 
         // Agregar el evento onclick al botón

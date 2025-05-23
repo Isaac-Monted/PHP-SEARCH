@@ -1,9 +1,11 @@
 // Cargar las funciones de los eventos de cargar las diferente Paginas
+import * as global from '../layout/global.js';
 import * as CarritoF from './script_cotizador.js';
 import * as widgets from './widgets_cotizador.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     ColocarLosDatosDelCarrito();
+    global.ColocarNumeroCarrito();
 });
 
 function ColocarLosDatosDelCarrito() {
@@ -28,6 +30,7 @@ export function MostrarTodoElCarrito() {
 export function QuitarArticuloDelCarrito(Id){
     CarritoF.EliminarArticuloCarrito(Id);
     ColocarLosDatosDelCarrito();
+    global.ColocarNumeroCarrito();
 }
 
 export function RestarALaCantidadDelProducto(Key, Id, Nombre, Cantidad) {

@@ -1,5 +1,6 @@
 // Cargar las funciones de eventos de gargar las diferentes paginas
 import * as Carrito from '../cotizador/script_cotizador.js';
+import * as global from '../layout/global.js';
 import * as widgets from './widgets_articulo.js';
 
 // Esta función se ejecutará cuando el DOM esté completamente cargado
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     Carrito.InicializarObjeto();
+    global.ColocarNumeroCarrito();
 });
 
 // Función para obtener el ID del producto desde la URL
@@ -55,6 +57,7 @@ export function AgregarAlCarrito(){
                     Carrito.AgregarArticuloCarrito(Articulo.ID_PRODUCTO, Articulo.NOMBRE, 1)
                 }); // Llamamos a la función que actualiza el DOM con los datos
                 alert("Se a agregado al carrito");
+                global.ColocarNumeroCarrito();
             } else {
                 console.error("Error: No se encontraron datos para el producto con ID:", productId);
                 alert("No se pudo agregar al carrito. Intenta nuevamente más tarde.");

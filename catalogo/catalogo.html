@@ -47,19 +47,15 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-12 text-left">
+                                    <ul class="list-unstyled mb-0" id="list_categories">
 
-
-
-
-
-
-                                    <ul class="list-unstyled mb-0">
                                         <li><a href="#!">Web Design</a></li>
                                         <li><a href="#!">HTML</a></li>
                                         <li><a href="#!">Freebies</a></li>
+
                                     </ul>
                                 </div>
-                              <!--   <div class="col-sm-6">
+                                <!--   <div class="col-sm-6">
                                     <ul class="list-unstyled mb-0">
                                         <li><a href="#!">JavaScript</a></li>
                                         <li><a href="#!">CSS</a></li>
@@ -85,7 +81,7 @@
         <div class="left-column"> <!-- Columna izquierda -->
             <section>
                 <h1>Categorías</h1>          
-                <div id="list_categories"></div> <!-- Aquí se llenarán las categorías dinámicamente -->
+                <!-- <div id="list_categories"></div> --> <!-- Aquí se llenarán las categorías dinámicamente -->
             </section>
         </div>
         <div class="right-column"> <!-- Columna derecha -->
@@ -106,6 +102,17 @@
   <footer id="FooterCatalogo"></footer>
 </body>
 
+<script>
+  async function cargarHTML(id, url) {
+    const res = await fetch(url);
+    const html = await res.text();
+    document.getElementById(id).innerHTML = html;
+  }
+
+  cargarHTML('HeaderCatalogo', '../layout/header.html');
+  cargarHTML('FooterCatalogo', '../layout/footer.html');
+</script>
+
 <script type="module">
   import * as Catalogo from './script_catalogo.js';  // Importar las funciones desde el módulo
 
@@ -116,17 +123,6 @@
   document.getElementById("search").addEventListener("input", function(){
     Catalogo.ChangeSearch();
   }); // Campo de búsqueda
-</script>
-
-<script>
-  async function cargarHTML(id, url) {
-    const res = await fetch(url);
-    const html = await res.text();
-    document.getElementById(id).innerHTML = html;
-  }
-
-  cargarHTML('HeaderCatalogo', '../layout/header.html');
-  cargarHTML('FooterCatalogo', '../layout/footer.html');
 </script>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">

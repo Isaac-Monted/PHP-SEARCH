@@ -1,10 +1,12 @@
 // Cargar las funciones de eventos de gargar las diferentes paginas
+import * as global from '../layout/global.js';
 import * as widgets from './widgets_catalogo.js';
 
 // Esta función se ejecutará cuando el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
     // llenar la pagina con los datos
     OnLoadPage();
+    global.ColocarNumeroCarrito();
 });
 
 

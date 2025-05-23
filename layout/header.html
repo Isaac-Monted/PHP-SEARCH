@@ -15,17 +15,14 @@
             <li class="nav-item active">
             <a class="nav-link" href="../catalogo/catalogo.html">Catalogo</a>
             </li>
-            <li class="nav-item active">
-            <a class="nav-link" href="../cotizador/cotizador.html">Carrito</a>
-            </li>
         </ul>
-            <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                         <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                            Carrito
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
-                    </form>
+            <div class="d-flex">
+                <button class="btn btn-outline-dark" onclick="window.location.href='../cotizador/cotizador.html'">
+                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                    Carrito
+                    <span class="badge bg-dark text-white ms-1 rounded-pill" id="numeroArticulosEnCarrito">0</span>
+                </button>
+            </div>
         </div>
     </div>
 </nav>

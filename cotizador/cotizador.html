@@ -41,17 +41,6 @@
     <footer id="FooterCotizador"></footer>
 </body>
 
-<script type="module">
-    import * as Carrito from './script_cotizador2.js';
-    document.getElementById("BotonEliminarCarrito").addEventListener("click", function() {
-        Carrito.BorrarCarrito();
-        Carrito.ColocarLosDatosDelCarrito();
-    });
-    document.getElementById("BotonMostrarCarrito").addEventListener("click", function() {
-        Carrito.MostrarTodoElCarrito();
-    });
-</script>
-
 <script>
     async function cargarHTML(id, url) {
         const res = await fetch(url);
@@ -61,6 +50,17 @@
 
     cargarHTML('HeaderCotizador', '../layout/header.html');
     cargarHTML('FooterCotizador', '../layout/footer.html');
+</script>
+
+<script type="module">
+    import * as Carrito from './script_cotizador2.js';
+    document.getElementById("BotonEliminarCarrito").addEventListener("click", function() {
+        Carrito.BorrarCarrito();
+        Carrito.ColocarLosDatosDelCarrito();
+    });
+    document.getElementById("BotonMostrarCarrito").addEventListener("click", function() {
+        Carrito.MostrarTodoElCarrito();
+    });
 </script>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">

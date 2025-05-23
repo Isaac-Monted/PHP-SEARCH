@@ -1,4 +1,9 @@
 import * as Carrito from '../cotizador/script_cotizador.js';
+import * as global from '../layout/global.js';
+
+document.addEventListener('DOMContentLoaded', function() {
+    global.ColocarNumeroCarrito();
+});
 
 export function FuncionBotonEnviarCotizacion() {
     try {
