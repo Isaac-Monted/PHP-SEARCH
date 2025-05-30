@@ -78,8 +78,8 @@ export function updateDOMWithProducts(products) {
 
     // Recorrer los productos y crear elementos para mostrarlos
     products.forEach(product => {
-        const productCard = document.createElement("button");
-        productCard.classList.add("product-cards-one");
+        const productCard = document.createElement("div"); // button
+        productCard.classList.add("col-lg-3", "col-md-4", "col-sm-6", "mb-4"); //product-cards-one
 
         productCard.onclick = () => {
             window.location.href = `../articulo/articulo.html?id=${product.ID_PRODUCTO}`;
@@ -92,11 +92,18 @@ export function updateDOMWithProducts(products) {
         }
 
         // Agregar contenido a la tarjeta del producto
-  productCard.innerHTML = `
-        <h3>${product.NOMBRE}</h3>
-        <p>${product.DESCRIPCION}</p>
-        <p>Marca: ${marca}</p>
-        `;
+        productCard.innerHTML = `
+            <div class="card h-100">
+                <!--<a href="../articulo/articulo.html?id=${product.ID_PRODUCTO}"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt=""></a>-->
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="../articulo/articulo.html?id=${product.ID_PRODUCTO}">${product.NOMBRE}</a>
+                    </h4>
+                    <p class="card-text">${product.DESCRIPCION}</p>
+                    <p class="card-text">Marca: ${marca}</p>
+                </div>
+            </div>
+            `;
 
 
     /*     productCard.innerHTML = `
@@ -106,6 +113,7 @@ export function updateDOMWithProducts(products) {
         `; */
 
         // <h3>${product.NOMBRE}</h3>
+
         // Agregar la tarjeta del producto al contenedor
         productContainer.appendChild(productCard);
     });
