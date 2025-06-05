@@ -35,43 +35,58 @@ export function updateProductDOM(products) {
         } else {
             marca = product.MARCA;
         }
-
         // Agregar contenido a la tarjeta del producto
         productCard.innerHTML = `
 <div class="row gx-4 gx-lg-5 align-items-center">
-    <div class="col-md-6">
+    <div class="col-md-6  text-center">
+      <h4>${product.NOMBRE}</h4>
+        <p class="text-justify">${product.DESCRIPCION}</p>
+            <ul class="list-group list-group-horizontal-lg text-left">
+            <li class="list-group-item text-left"><p class="text-left">SKU: </p> </li>
+            <li class="list-group-item">${product.SKU}</li>
+            </ul>
+            <ul class="list-group list-group-horizontal-lg">
+            <li class="list-group-item"><p class="text-left">Marca: </p> </li>
+            <li class="list-group-item">${marca}</li>
+            </ul>
+            <ul class="list-group list-group-horizontal">
+            <li class="list-group-item"><p>Peso: </p></li>
+            <li class="list-group-item">${product.PESO}</li>
+            </ul>
+            <ul class="list-group list-group-horizontal">
+            <li class="list-group-item"><p>Ancho: </p> </li>
+            <li class="list-group-item">${product.ANCHO}</li>
+            </ul>
+            <ul class="list-group list-group-horizontal">
+            <li class="list-group-item"><p>Largo: </p> </li>
+            <li class="list-group-item">${product.LARGO}</li>
+            </ul>
+            <ul class="list-group list-group-horizontal">
+            <li class="list-group-item"><p>Alto: </p> </li>
+            <li class="list-group-item">${product.ALTO}</li>
+            </ul>
+    </div>
+            <div class="col-md-6"> <img src="data:image/jpg;base64,${product.IMAGE}" alt="Descripción de la imagen"
+                    style="width: 350px; heigth: 350px;"></div>
+            </div>
+`;
+        // Agregar la tarjeta del producto al contenedor
+        productContainer.appendChild(productCard);
+    });
+}
+
+
+/*    
         <h3>${product.NOMBRE}</h3>
         <p>${product.DESCRIPCION}</p>
         <p>Codigo: ${product.CODIGO}</p>
         <p>SKU: ${product.SKU}</p>
         <p>Marca: ${marca}</p>
-        <p>Modelo: ${product.MODELO}</p>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Peso</th>
-                    <th>Ancho</th>
-                    <th>Largo</th>
-                    <th>Alto</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>${product.PESO}</td>
-                    <td>${product.ANCHO}</td>
-                    <td>${product.LARGO}</td>
-                    <td>${product.ALTO}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="col-md-6"> <img src="data:image/jpg;base64,${product.IMAGE}" alt="Descripción de la imagen"
-            style="width: 350px; heigth: 350px;"></div>
-</div>
-`;
-
-        // Agregar la tarjeta del producto al contenedor
-        productContainer.appendChild(productCard);
-    });
-}
+        <p>Modelo: ${product.MODELO}</p> 
+        
+            <ol class="list-group list-group-numbered">
+            <li class="list-group-item">Un elemento de lista</li>
+            <li class="list-group-item">Un elemento de lista</li>
+            <li class="list-group-item">Un elemento de lista</li>
+            </ol>
+*/
