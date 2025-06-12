@@ -79,7 +79,7 @@ export function updateDOMWithProducts(products) {
     // Recorrer los productos y crear elementos para mostrarlos
     products.forEach(product => {
         const productCard = document.createElement("div"); // button
-        productCard.classList.add("col-lg-3", "col-md-4", "col-sm-6", "mb-4"); //product-cards-one
+        productCard.classList.add("col-lg-4", "col-md-4", "col-sm-6", "mb-4"); //product-cards-one
 
         productCard.onclick = () => {
             window.location.href = `../articulo/articulo.html?id=${product.ID_PRODUCTO}`;
