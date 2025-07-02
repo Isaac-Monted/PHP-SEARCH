@@ -37,9 +37,11 @@ export function RestarALaCantidadDelProducto(Key, Id, Nombre, Cantidad) {
     if (Cantidad >= 1){
         CarritoF.EditarArticuloCarrito(Key, Id, Nombre, Cantidad - 1);
         ColocarLosDatosDelCarrito();
+        global.ColocarNumeroCarrito();
     }else {
         CarritoF.EliminarArticuloCarrito(Key);
         ColocarLosDatosDelCarrito();
+        global.ColocarNumeroCarrito();
     }
     
 }
@@ -48,6 +50,7 @@ export function SumarALaCantidadDelProducto(Key, Id, Nombre, Cantidad) {
     if (Cantidad < 99){
         CarritoF.EditarArticuloCarrito(Key, Id, Nombre, Cantidad + 1);
         ColocarLosDatosDelCarrito();
+        global.ColocarNumeroCarrito();
     }else {
         alert("La cantidad indicada exede al disponible");
     }

@@ -1,8 +1,8 @@
 import * as carrito from '../cotizador/script_cotizador.js';
 
-export function ColocarNumeroCarrito() {
-    const contador = document.getElementById("numeroArticulosEnCarrito");
-    const articulos  = carrito.LeerArticuloCarrito();
+export async function ColocarNumeroCarrito() {
+    const contador = await document.getElementById("numeroArticulosEnCarrito");
+    const articulos  = await carrito.LeerArticuloCarrito();
     console.log(articulos);
 
     if (contador) {
