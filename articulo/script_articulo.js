@@ -5,6 +5,8 @@ import * as widgets from './widgets_articulo.js';
 
 // Esta función se ejecutará cuando el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
+    global.ColocarNumeroCarrito();
+    
     const productId = getProductIdFromURL(); // Obtener el ID del producto desde la URL
     if (productId) {
         fetchProductDetails(productId); // Hacer el fetch con el ID y actualizar el DOM
@@ -16,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     Carrito.InicializarObjeto();
-    global.ColocarNumeroCarrito();
 });
 
 // Función para obtener el ID del producto desde la URL

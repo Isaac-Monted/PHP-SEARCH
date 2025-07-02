@@ -4,8 +4,8 @@ import * as CarritoF from './script_cotizador.js';
 import * as widgets from './widgets_cotizador.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-    ColocarLosDatosDelCarrito();
     global.ColocarNumeroCarrito();
+    ColocarLosDatosDelCarrito();
 });
 
 function ColocarLosDatosDelCarrito() {

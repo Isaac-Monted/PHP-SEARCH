@@ -4,9 +4,9 @@ import * as widgets from './widgets_catalogo.js';
 
 // Esta función se ejecutará cuando el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
+    global.ColocarNumeroCarrito();
     // llenar la pagina con los datos
     OnLoadPage();
-    global.ColocarNumeroCarrito();
 });
 
 
