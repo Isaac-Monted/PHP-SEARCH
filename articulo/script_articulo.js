@@ -4,8 +4,8 @@ import * as global from '../layout/global.js';
 import * as widgets from './widgets_articulo.js';
 
 // Esta función se ejecutará cuando el DOM esté completamente cargado
-document.addEventListener('DOMContentLoaded', function() {
-    global.ColocarNumeroCarrito();
+document.addEventListener('DOMContentLoaded', async function() {
+    await global.ColocarNumeroCarrito();
     
     const productId = getProductIdFromURL(); // Obtener el ID del producto desde la URL
     if (productId) {
