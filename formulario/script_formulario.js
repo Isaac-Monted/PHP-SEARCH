@@ -1,7 +1,9 @@
 import * as Carrito from '../cotizador/script_cotizador.js';
 import * as global from '../layout/global.js';
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    await global.cargarHTML('HeaderFormulario', '../layout/header.html');
+    await global.cargarHTML('FooterFormulario', '../layout/footer.html');
     global.ColocarNumeroCarrito();
 });
 

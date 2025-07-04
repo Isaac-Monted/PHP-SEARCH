@@ -3,10 +3,12 @@ import * as global from '../layout/global.js';
 import * as widgets from './widgets_catalogo.js';
 
 // Esta función se ejecutará cuando el DOM esté completamente cargado
-document.addEventListener('DOMContentLoaded', function() {
-    global.ColocarNumeroCarrito();
+document.addEventListener('DOMContentLoaded', async function() {
+    await global.cargarHTML('HeaderCatalogo', '../layout/header.html');
+    await global.cargarHTML('FooterCatalogo', '../layout/footer.html');
     // llenar la pagina con los datos
     OnLoadPage();
+    global.ColocarNumeroCarrito();
 });
 
 

@@ -58,17 +58,6 @@
     <footer id="FooterFormulario"></footer>
 </body>
 
-<script>
-    async function cargarHTML(id, url) {
-        const res = await fetch(url);
-        const html = await res.text();
-        document.getElementById(id).innerHTML = html;
-    }
-
-    cargarHTML('HeaderFormulario', '../layout/header.html');
-    cargarHTML('FooterFormulario', '../layout/footer.html');
-</script>
-
 <script type="module">
     import * as Carrito from './script_formulario.js';
     document.getElementById("BotonFormularioRegresar").addEventListener("click", function() {

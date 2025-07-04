@@ -26,7 +26,7 @@ export function GenerarColumnaCategorias(categorias){
         }
         const categoriaCard = document.createElement("li");
 
-               
+        
         //categoriaCard.classList.add("product-cards-one");
 
         // Crear el botón para la categoría
