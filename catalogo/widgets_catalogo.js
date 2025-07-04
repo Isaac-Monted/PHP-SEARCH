@@ -106,14 +106,6 @@ export function updateDOMWithProducts(products) {
             `;
 
 
-    /*     productCard.innerHTML = `
-        <h3>${product.NOMBRE}</h3>
-        <p>${product.DESCRIPCION}</p>
-        <p>Marca: ${marca}</p>
-        `; */
-
-        // <h3>${product.NOMBRE}</h3>
-
         // Agregar la tarjeta del producto al contenedor
         productContainer.appendChild(productCard);
     });
