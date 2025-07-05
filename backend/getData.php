@@ -130,7 +130,7 @@ function getProductByCategoria($conn, $id_categoria) {
 
 // Función para obtener productos con búsqueda aproximada
 function searchProductos($conn, $search_term) {
-    $sql = "SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, MARCA FROM CATALOGO WHERE NOMBRE LIKE ?";
+    $sql = "SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, MARCA FROM CATALOGO WHERE NOMBRE LIKE ? LIMIT 100";
     $stmt = $conn->prepare($sql);
     $search_term = "%" . $search_term . "%";  // Se utiliza el % para hacer una búsqueda con LIKE
     $stmt->bind_param("s", $search_term);  // "s" significa un parámetro de tipo string
