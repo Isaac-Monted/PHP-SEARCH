@@ -20,3 +20,9 @@ export async function ColocarNumeroCarrito() {
         console.warn("No se encontró el elemento con id 'numeroArticulosEnCarrito'");
     }
 }
+
+export async function cargarHTML(id, url) {
+    const res = await fetch(url);
+    const html = await res.text();
+    document.getElementById(id).innerHTML = html;
+}

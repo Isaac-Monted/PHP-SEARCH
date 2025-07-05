@@ -3,9 +3,11 @@ import * as global from '../layout/global.js';
 import * as CarritoF from './script_cotizador.js';
 import * as widgets from './widgets_cotizador.js';
 
-document.addEventListener('DOMContentLoaded', function() {
-    global.ColocarNumeroCarrito();
+document.addEventListener('DOMContentLoaded', async function() {
+    await global.cargarHTML('HeaderCotizador', '../layout/header.html');
+    await global.cargarHTML('FooterCotizador', '../layout/footer.html');
     ColocarLosDatosDelCarrito();
+    global.ColocarNumeroCarrito();
 });
 
 function ColocarLosDatosDelCarrito() {
