@@ -1,5 +1,5 @@
 @import url('var_colores.css');
-body{
+/* body{
     background: url('../img/tapete-metal.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -9,38 +9,7 @@ body{
     text-align: center;
     margin-top: 3%;
   }
-/*   body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 50px;
-} */
-/* button {
-    padding: 10px 20px;
-    margin: 20px;
-    font-size: 16px;
-    cursor: pointer;
-} */
-/* .left-column {
-    font-family: 'arial';
-    width: 50vw;
-    margin: 0;
-    padding: 20px;
-} */
-
-/* .center-column {
-  font-family: 'arial';
-  width: 50vw;
-  margin: 0;
-  padding: 20px;
-}
  */
-/* .right-column {
-    font-family: 'arial';
-    width: 50vw;
-    margin: 0;
-    padding: 20px;
-} */
-
 .caja1 {
     font-family: 'arial';
  /*    display: flex;
@@ -48,64 +17,6 @@ body{
     padding: 20px; */
 }
 
-/* .caja2 {
-  font-family: 'Arial';
-  display: flex;
-  flex-direction: row;
-  justify-content: center; 
-
-  padding: 20px;
-}
- */
-/* .search-bar {
-    padding: 20px;
-    padding-left: 30px;
-} */
-
-/* #product-cards {
-    padding: 20px;
-    
-}
- */
-/* .product-cards-one {
-    background-color:rgba(156, 156, 156, 0.28);;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.28);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.28);
-    box-shadow: 10px 10px 5px 0px rgba(59, 59, 59, 0.28);
-    padding: 10px;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-}
- */
-/* .casillaNumeros {
-
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #585858;
-  border-radius: 4px;
-
-} */
-
-/* .boton_categoria{
-  padding: 10px 20px;
-  margin: 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-width: 2px;
-  border-style: outset;
-  border-color: black;
-  border-image: initial;
-}
- */
-/* .boton_categoria:hover {
-  background-color: rgba(59, 59, 59, 0.5);
-} */
-
-/* .boton_categoria:active {
-  background-color: rgba(59, 59, 59, 0.808);
-  color: white;
-}
- */
 .button-group button {
         padding: 10px 20px;
         margin: 5px;
@@ -202,4 +113,9 @@ header {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 12px;
+  }
+  .edit-img{
+    box-shadow: 2px 5px 18px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 2px 5px 18px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 5px 18px 0px rgba(0,0,0,0.75);
   }
