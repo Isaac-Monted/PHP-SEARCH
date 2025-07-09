@@ -23,7 +23,7 @@ function OnLoadPage() {
 };
 
 export function LoadColumCategorias(){
-    fetch(`../backend/getData.php?action=getAllCategorias`)
+    fetch(`../backend/getData.php?action=getAllFamilias`)
         .then(respoinse => respoinse.json()) // Espera la respuesta como JSON
         .then(data => {
             //console.log("Datos obtenidos: ", data);
