@@ -41,7 +41,7 @@ export function GenerarColumnaCategorias(categorias){
             // Llamar a una función, por ejemplo, una función que maneje lo que sucede al hacer clic
             console.log(categoria.ID_CATEGORIA)
             // Por ejemplo, enviar la categoría seleccionada a una función
-            ClickButtonCategories(categoria.ID_CATEGORIA);  // Llamada a la función con el objeto de categoría
+            ClickButtonCategories(categoria.ID_FAMILIA);  // Llamada a la función con el objeto de categoría
         });
 
         // Agregar el botón al contenedor de la tarjeta
@@ -80,17 +80,14 @@ export function updateDOMWithProducts(products) {
     products.forEach(product => {
         const productCard = document.createElement("div"); // button
         productCard.classList.add("col-lg-4", "col-md-4", "col-sm-6", "mb-4"); //product-cards-one
-
         productCard.onclick = () => {
             window.location.href = `../articulo/articulo.html?id=${product.ID_PRODUCTO}`;
         };
-
         if (product.MARCA == "UNDEFINED"){
             marca = ""
         }else{
             marca = product.MARCA
         }
-
         // Agregar contenido a la tarjeta del producto
         productCard.innerHTML = `
             <div class="card h-100">
@@ -104,8 +101,6 @@ export function updateDOMWithProducts(products) {
                 </div>
             </div>
             `;
-
-
         // Agregar la tarjeta del producto al contenedor
         productContainer.appendChild(productCard);
     });
