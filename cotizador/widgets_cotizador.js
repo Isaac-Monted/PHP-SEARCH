@@ -33,7 +33,7 @@ export function ColocarElCarritoEnLaPagina(descripcion){
                 </div>
                 <div class="center-column"> <!-- Columna centro -->
                     <div>
-                        <p>${Articulos.Nombre}</p>
+                        <a href="../articulo/articulo.html?id=${Articulos.Id}"><p>${Articulos.Nombre}</p></a>
                     </div>
                     <div>
                         <input class="casillaNumeros" type="text" id="Cantidad${Articulos.Id}" name="Cantidad${Articulos.Id}" value=${Articulos.Cantidad} style="text-align: center;" disabled>
