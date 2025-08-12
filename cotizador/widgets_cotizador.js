@@ -28,7 +28,7 @@ export function ColocarElCarritoEnLaPagina(descripcion){
             <div class="caja1">
                 <div class="left-column"> <!-- Columna izquierda -->
                     <div>
-                        <h5>Imagen xd</h5>
+                        <!-- <h5>Imagen xd</h5> -->
                     </div>
                 </div>
                 <div class="center-column"> <!-- Columna centro -->

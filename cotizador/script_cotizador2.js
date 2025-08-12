@@ -21,7 +21,7 @@ export function BorrarCarrito() {
 
 export function MostrarTodoElCarrito() {
     const Productos = CarritoF.LeerArticuloCarrito(); // Traer el objeto almacenado
-    if (Object.keys(Productos).length === 1 && Productos[0]){
+    if (Productos[0] === 0){
         // Si el objeto se queda en blanco y solo queda el contador entonces se niega la cotizacion
         alert("Agrege un articulo al carrito para poder cotizar")
     }else {
