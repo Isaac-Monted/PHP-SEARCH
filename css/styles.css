@@ -119,3 +119,12 @@ header {
 -webkit-box-shadow: 2px 5px 18px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 2px 5px 18px 0px rgba(0,0,0,0.75);
   }
+  .prod-lista{
+    margin-top: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
