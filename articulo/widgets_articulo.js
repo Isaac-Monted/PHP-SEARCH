@@ -39,10 +39,11 @@ export function updateProductDOM(products) {
         }
 
         // validacion de la imagen del producto
-        if (product.IMAGE == null) {
+        if (product.IMAGE == null || product.IMAGE == "") {
             imagen = "../assets/default.jpg";
         } else {
-            imagen = product.IMAGE;
+            console.log(product.IMAGE);
+            imagen = `https://riopisuena.com.mx/${product.IMAGE}`;
         }
 
         // Agregar contenido a la tarjeta del producto
