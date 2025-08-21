@@ -1,4 +1,7 @@
 @import url('var_colores.css');
+@import url('https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap');
+
+
 /* body{
     background: url('../img/tapete-metal.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -119,3 +122,60 @@ header {
 -webkit-box-shadow: 2px 5px 18px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 2px 5px 18px 0px rgba(0,0,0,0.75);
   }
+  .prod-lista{
+    margin-top: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .stilo-carrito{
+
+
+    background-color: var(--color-primario);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: left;
+    margin-bottom: 10px;
+
+  }
+
+  .custom-btn-sm {
+  padding: 5px 15px;
+  font-size: 0.875rem;
+  border-radius: 5px;
+}
+
+
+.txt-prod{
+  font-size: 16px;
+  text-decoration: none;   /* Solo quita el subrayado */
+  color: #333;             /* Color personalizado */
+
+}
+.txt-prod-1{
+  font-size: 25px;
+  text-decoration: none;   /* Solo quita el subrayado */
+  color: #333;   
+  margin-bottom: 5%;          /* Color personalizado */
+   font-weight: 500;
+
+}
+.txt-prod:hover {
+  text-decoration: none;   /* También en hover */
+}
+
+.stilo-tittle{
+  font-family: 'Nata Sans', sans-serif;
+/*   font-weight: 900; */
+  color: var(--color-primario);
+/*   text-shadow: 2px 2px 4px rgba(0,0,0,0.5); */
+}
+
+

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,6 @@
     integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
   <div id="HeaderCatalogo"></div> <!-- Header de la pagina -->
 
@@ -23,7 +21,7 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="card mb-4">
-              <div class="card-header">Categorias</div>
+              <div class="card-header"><h3>Categorias</h3></div>
               <div class="card-body">
                 <div class="row">
                   <div class="col-sm-12 text-left">
@@ -34,51 +32,34 @@
             </div>
           </div>
           <div class="col-lg-8">
-            <!--  <div class="caja1">  -->
             <div class="left-column">
               <section>
-                <!--   <h1>Categorías</h1>           -->
-
               </section>
             </div>
-
+            <h3 class="my-3 text-center">- Encuentra la herramienta que necesitas -</h3>
             <div class="input-group">
               <input type="search" type="text" id="search" class="form-control rounded"
                 placeholder="Escribe tu herramienta a buscar" aria-label="Search" aria-describedby="search-addon" />
               <button type="button" id="searchButton" class="btn btn-outline-primary"
                 data-mdb-ripple-init>Buscar</button>
             </div>
-            <section id="Categories_row" class="categories-row">
+            <section id="Categories_row" class="prod-lista categories-row">
               <section>
-                <!-- Page Content -->
                 <div class="container">
-
-                  <!-- Page Heading -->
-                  <!--    <h1 class="my-4">Catalogo de
-          <small>productos</small>
-        </h1> -->
-
                   <div class="row" id="product-cards"></div>
-                  <!-- /.row -->
               </section>
             </section>
-
           </div>
         </div><!-- CIERRE DE COL-8 -->
-
       </div>
     </div>
   </div>
-  <div style="height: 800px"></div>
-  <p class="lead mb-0">- Siempre buscando la satisfacción del cliente -<p>
-      </div>
-      </div>
-      <footer id="FooterCatalogo"></footer>
+  </div>
+  </div>
+  <footer id="FooterCatalogo"></footer>
 </body>
-
 <script type="module">
   import * as Catalogo from './script_catalogo.js';  // Importar las funciones desde el módulo
-
   // Asocia los eventos con los elementos del HTML
   document.getElementById("searchButton").addEventListener("click", function(){
     Catalogo.ProductSearch();
@@ -91,5 +72,4 @@
   integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
 </html>

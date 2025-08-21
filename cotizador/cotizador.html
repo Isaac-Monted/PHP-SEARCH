@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+    <!-- Revisar si si esta bien ya no me acuerdo de como es la letania xd-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferretera Rio Pisuena | Cotizador Web</title>
@@ -18,28 +20,27 @@
     
     <!-- Page Content -->
     <div class="container">
-        <div class="card border-0 shadow my-5">
-            <div class="card-body p-5">
-                <div class="container"> <!-- Contenedor principal -->
-                    
-                    <div> <!-- Columna -->
-                        <section>
-                            <h1>Tu carrito</h1>
-                            <div id="Descripcion-del-carrito"></div> <!-- Aquí se llenarán el producto seleccionado -->
-                        </section>
-                    </div>
-                    <div>
-                        <section>
-                            <button id="BotonEliminarCarrito">Eliminar el carrito</button>
-                            <button id="BotonMostrarCarrito">Cotizar el carrito</button>
-                        </section>
-                    </div>
+      <div class="card border-0 shadow my-5">
+          <div class="card-body p-5">
+              <div class="container">
+                  <div class="card">
+                      <div class="card-body">
+                          <h1  class="text-center stilo-tittle">Mis Productos</h1>
+                      <div id="Descripcion-del-carrito"></div>
 
+
+                      <div class="d-grid gap-2 d-md-flex justify-content-md-end"> 
+                          <button class="btn btn-danger" id="BotonEliminarCarrito">Eliminar el carrito</button>
+                          <button class="btn btn-success" id="BotonMostrarCarrito">Cotizar el carrito</button>
+                      </div>   
+                   </div>
                 </div>
             </div>
         </div>
     </div>
-    <footer id="FooterCotizador"></footer>
+
+  <footer id="FooterCotizador"></footer>
+
 </body>
 
 <script type="module">
@@ -53,6 +54,10 @@
     });
 </script>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
+
 </html>
