@@ -10,13 +10,14 @@ document.addEventListener('DOMContentLoaded', async function() {
     global.ColocarNumeroCarrito();
 });
 
-function ColocarLosDatosDelCarrito() {
+export function ColocarLosDatosDelCarrito() {
     const Descripcion = CarritoF.LeerArticuloCarrito();
     widgets.ColocarElCarritoEnLaPagina(Descripcion);
 }
 
 export function BorrarCarrito() {
     CarritoF.EliminarTodoElCarrito();
+    ColocarLosDatosDelCarrito();
 }
 
 export function MostrarTodoElCarrito() {

@@ -41,12 +41,14 @@ export function ColocarElCarritoEnLaPagina(descripcion) {
         <div class="row col-lg-12 mb-12">
 
             <div class="col-12 col-md-4 text-center">
+              <a href="../articulo/articulo.html?id=${Articulos.Id}">
                 <img src="${imagen}" alt="Descripción de la imagen" style="width:40%; heigth:40%;" class="text-center">
+              </a>
             </div>
             <div class="col-12 col-md-2">
                 <p class="text-left">Producto</p>
                 <a href="../articulo/articulo.html?id=${Articulos.Id}" class="txt-prod">
-                    <p class="txt-prod">${Articulos.Nombre}</p>
+                  <p class="txt-prod">${Articulos.Nombre}</p>
                 </a>
             </div>
 

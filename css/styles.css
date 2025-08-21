@@ -23,16 +23,17 @@
 .button-group button {
         padding: 10px 20px;
         margin: 5px;
-        background-color: #007BFF;
+      /*  background-color: #007BFF;
         color: white;
         border: none;
         border-radius: 4px;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 16px; */
     }
 
 .button-group button:hover {
-    background-color: #0056b3;
+  /*  background-color: #0056b3; */
+  border: none;
 }
 
 header {
@@ -162,9 +163,9 @@ header {
 .txt-prod-1{
   font-size: 25px;
   text-decoration: none;   /* Solo quita el subrayado */
-  color: #333;   
+  color: #333;
   margin-bottom: 5%;          /* Color personalizado */
-   font-weight: 500;
+  font-weight: 500;
 
 }
 .txt-prod:hover {
