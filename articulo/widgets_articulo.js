@@ -1,6 +1,6 @@
 // Funcion que genera el contenido de la pagina dependiendo del producto selecionado
 export function LoadProductSelected(Id_producto) {
-    console.log(`Se coloco los datos en el DOM: ${Id_producto}`);
+    //console.log(`Se coloco los datos en el DOM: ${Id_producto}`);
 }
 
 // Función que actualiza el DOM con los datos del producto
@@ -42,7 +42,7 @@ export function updateProductDOM(products) {
         if (product.IMAGE == null || product.IMAGE == "") {
             imagen = "../assets/default.jpg";
         } else {
-            console.log(product.IMAGE);
+            //console.log(product.IMAGE);
             imagen = `https://riopisuena.com.mx/${product.IMAGE}`;
         }
 

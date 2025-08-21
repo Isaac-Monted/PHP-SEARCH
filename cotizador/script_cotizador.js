@@ -17,7 +17,7 @@ function GuardarObjetoEnStorage(objeto){
     localStorage.setItem('productos', JSON.stringify(objeto));
 }
 
-export function AgregarArticuloCarrito(Id, Nombre, Cantidad){
+export function AgregarArticuloCarrito(Id, Nombre, Cantidad, Imagen){
     try {
         const Productos = LeerArticuloCarrito(); // Traer el objeto almacenado
 
@@ -27,7 +27,7 @@ export function AgregarArticuloCarrito(Id, Nombre, Cantidad){
 
             const producto = Productos[key] // Traer los valores del Id
             if (producto.Id === Id){ // Si ya existe =>
-                EditarArticuloCarrito(key, producto.Id, producto.Nombre, producto.Cantidad + Cantidad); // Editar la cantidad
+                EditarArticuloCarrito(key, producto.Id, producto.Nombre, producto.Cantidad + Cantidad, producto.Imagen); // Editar la cantidad
                 return true;
             }
             
@@ -35,7 +35,7 @@ export function AgregarArticuloCarrito(Id, Nombre, Cantidad){
 
         let NuevoId = Productos[0] + 1; // generar un id para el nuevo objeto
         Productos[0] = NuevoId; // Actualizar el contador
-        Productos[NuevoId] = {'Id':Id,'Nombre':Nombre,'Cantidad':Cantidad}; // Construir el objeto
+        Productos[NuevoId] = {'Id':Id,'Nombre':Nombre,'Cantidad':Cantidad, 'Imagen':Imagen}; // Construir el objeto
         GuardarObjetoEnStorage(Productos); // Guardar el nuevo objeto
         return true;
     } catch (error) {
@@ -44,12 +44,12 @@ export function AgregarArticuloCarrito(Id, Nombre, Cantidad){
     }
 }
 
-export function EditarArticuloCarrito(Id_storage, Id_producto, Nombre, Cantidad){
+export function EditarArticuloCarrito(Id_storage, Id_producto, Nombre, Cantidad, Imagen){
     try {
         const Productos = LeerArticuloCarrito(); // Traer el objeto almacenado
 
         if (Productos[Id_storage]){ // Si el id existe =>
-            Productos[Id_storage] = {'Id':Id_producto,'Nombre':Nombre,'Cantidad':Cantidad} // Construir el objeto
+            Productos[Id_storage] = {'Id':Id_producto,'Nombre':Nombre,'Cantidad':Cantidad, 'Imagen':Imagen} // Construir el objeto
             GuardarObjetoEnStorage(Productos); // Guardar el nuevo objeto
             return true;
         }else{

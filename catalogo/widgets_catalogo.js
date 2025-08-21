@@ -3,7 +3,7 @@ import { ClickButtonCategories } from './script_catalogo.js';
 
 // Funcion que genera el contenido con las categorias consultadas de la base
 export function GenerarColumnaCategorias(categorias){
-    console.log("se a generado las categorias");
+    //console.log("se a generado las categorias");
     const containerCategorias = document.getElementById("list_categories") // El contenedor donde se mostrarán las categorias
     containerCategorias.innerHTML = ''; // Limpiar el contenedor para agregar las categorias
 
@@ -37,9 +37,9 @@ export function GenerarColumnaCategorias(categorias){
         // Agregar el evento onclick al botón
         categoriaCard.addEventListener("click", () => {
             // Aquí puedes pasar los parámetros que quieras, por ejemplo:
-            console.log(`Botón clickeado: ${categoria.NOMBRE}`);
+            //console.log(`Botón clickeado: ${categoria.NOMBRE}`);
             // Llamar a una función, por ejemplo, una función que maneje lo que sucede al hacer clic
-            console.log(categoria.ID_CATEGORIA)
+            //console.log(categoria.ID_CATEGORIA)
             // Por ejemplo, enviar la categoría seleccionada a una función
             ClickButtonCategories(categoria.ID_FAMILIA);  // Llamada a la función con el objeto de categoría
         });

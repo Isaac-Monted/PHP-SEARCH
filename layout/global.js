@@ -3,7 +3,7 @@ import * as carrito from '../cotizador/script_cotizador.js';
 export async function ColocarNumeroCarrito() {
     const articulos  = await carrito.LeerArticuloCarrito();
     const contador = await esperarElementoPorId("numeroArticulosEnCarrito");
-    console.log(articulos);
+    //console.log(articulos);
 
     if (contador) {
         let total = 0;

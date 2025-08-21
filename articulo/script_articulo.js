@@ -27,7 +27,7 @@ function getProductIdFromURL() {
 
 // Función que hace el fetch para obtener los datos del producto
 function fetchProductDetails(productId) {
-    console.log("Id:", encodeURIComponent(productId));
+    //console.log("Id:", encodeURIComponent(productId));
     fetch(`../backend/getData.php?action=getProductById&id_producto=${encodeURIComponent(productId)}`) // URL API
         .then(response => response.json())
         .then(data => {
@@ -54,7 +54,7 @@ export function AgregarAlCarrito(){
             if (data) {
                 //console.log("Datos obtenidos: ", data);
                 data.forEach(Articulo => {
-                    Carrito.AgregarArticuloCarrito(Articulo.ID_PRODUCTO, Articulo.NOMBRE, 1)
+                    Carrito.AgregarArticuloCarrito(Articulo.ID_PRODUCTO, Articulo.NOMBRE, 1, Articulo.IMAGE)
                 }); // Llamamos a la función que actualiza el DOM con los datos
                 alert("Se a agregado al carrito");
                 global.ColocarNumeroCarrito();

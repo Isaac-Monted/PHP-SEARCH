@@ -18,7 +18,7 @@ export function FuncionBotonEnviarCotizacion() {
             return;
         }
         alert("Hubo un error inseperado, no se envio la cotizacion");
-        console.log(Error);
+        console.error(Error);
     }
 }
 
@@ -51,7 +51,7 @@ async function EnviarCotizacionCorreo() {
             formData.append(key, dato[key]);
         }
 
-        console.log(dato);
+        //console.log(dato);
 
         try {
             const response = await fetch('../backend/sendMails.php', { // Php para mandar el correo

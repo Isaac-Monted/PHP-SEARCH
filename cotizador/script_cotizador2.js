@@ -36,9 +36,9 @@ export function QuitarArticuloDelCarrito(Id){
     global.ColocarNumeroCarrito();
 }
 
-export function RestarALaCantidadDelProducto(Key, Id, Nombre, Cantidad) {
+export function RestarALaCantidadDelProducto(Key, Id, Nombre, Cantidad, Imagen) {
     if (Cantidad >= 1){
-        CarritoF.EditarArticuloCarrito(Key, Id, Nombre, Cantidad - 1);
+        CarritoF.EditarArticuloCarrito(Key, Id, Nombre, Cantidad - 1, Imagen);
         ColocarLosDatosDelCarrito();
         global.ColocarNumeroCarrito();
     }else {
@@ -49,12 +49,32 @@ export function RestarALaCantidadDelProducto(Key, Id, Nombre, Cantidad) {
     
 }
 
-export function SumarALaCantidadDelProducto(Key, Id, Nombre, Cantidad) {
+export function SumarALaCantidadDelProducto(Key, Id, Nombre, Cantidad, Imagen) {
     if (Cantidad < 99){
-        CarritoF.EditarArticuloCarrito(Key, Id, Nombre, Cantidad + 1);
+        CarritoF.EditarArticuloCarrito(Key, Id, Nombre, Cantidad + 1, Imagen);
         ColocarLosDatosDelCarrito();
         global.ColocarNumeroCarrito();
     }else {
         alert("La cantidad indicada exede al disponible");
     }
+}
+
+export function BuscarArticuloPorId(productId){
+    //console.log("Id:", productId);
+    return fetch(`../backend/getData.php?action=getImageProductById&id_producto=${productId}`) // URL API
+        .then(response => response.json())
+        .then(data => {
+            if (data && Array.isArray(data) && data.length > 0) {
+                const obj = data[0];
+                //console.log("Datos obtenidos: ", obj);
+                return obj;  // debuelve el objeto en vez del arreglo
+            } else {
+                console.error("Error: No se encontraron datos para el producto con ID:", productId);
+                return null; // se regresa null para no comprometer la ingeridad del codigo
+            }
+        })
+        .catch(error => {
+            console.error('Error al obtener los datos del producto:', error);
+            return null; // se regresa null para no comprometer la ingeridad del codigo
+        });
 }

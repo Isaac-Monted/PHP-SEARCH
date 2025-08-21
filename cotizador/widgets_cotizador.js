@@ -1,6 +1,6 @@
 import * as controller from "./script_cotizador2.js";
 
-export function ColocarElCarritoEnLaPagina(descripcion) {
+export async function ColocarElCarritoEnLaPagina(descripcion) {
   const CarritoContainer = document.getElementById("Descripcion-del-carrito");
   // Limpiar el carrito para yenarlo nuevamente
   CarritoContainer.innerHTML = "";
@@ -18,19 +18,27 @@ export function ColocarElCarritoEnLaPagina(descripcion) {
   // Recorrer los productos y crear elementos para mostrarlos
   Object.keys(descripcion).forEach((key) => {
     if (key === "0") return; // Ignorar el contador, si estás usando ese sistema
+  
+    /*for (const key of Object.keys(descripcion)) {  <- version anterior del codigo
+    if (key === "0") continue;*/
+    
+    // se declaran las variables y se crean los contenedores
     const Articulos = descripcion[key]; // Aquí el objeto del producto
-
     const productCard = document.createElement("div");
     productCard.classList.add("container");
     productCard.classList.add("stilo-carrito");
     productCard.classList.add("txt-prod");
 
+    //buscar la imagen del producto
+    /*const product = await controller.BuscarArticuloPorId(Articulos.Id); <-- version anterior sel codigo
+    console.log(product);*/
+
     // validacion de la imagen del producto
-    if (Articulos.IMAGE == null || Articulos.IMAGE == "") {
+    if (Articulos.Imagen == null || Articulos.Imagen == ' ') { // if (!product || !product.IMAGE)
       imagen = "../assets/default.jpg";
     } else {
-      console.log(Articulos.IMAGE);
-      imagen = `https://riopisuena.com.mx/${Articulos.IMAGE}`;
+      //console.log(Articulos.Imagen);
+      imagen = `https://riopisuena.com.mx/${Articulos.Imagen}`;
     }
 
     // Agregar contenido a la tarjeta del producto
@@ -94,7 +102,8 @@ export function ColocarElCarritoEnLaPagina(descripcion) {
         key,
         Articulos.Id,
         Articulos.Nombre,
-        Articulos.Cantidad
+        Articulos.Cantidad,
+        Articulos.Imagen
       );
     });
 
@@ -104,7 +113,8 @@ export function ColocarElCarritoEnLaPagina(descripcion) {
         key,
         Articulos.Id,
         Articulos.Nombre,
-        Articulos.Cantidad
+        Articulos.Cantidad,
+        Articulos.Imagen
       );
     });
 
@@ -112,5 +122,5 @@ export function ColocarElCarritoEnLaPagina(descripcion) {
       console.log("Quitar" + key);
       controller.QuitarArticuloDelCarrito(key);
     });
-  });
+  }); // <-- )
 }

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 
 function OnLoadPage() {
-    console.log("La página ha cargado completamente!"); // Mensaje para comprobar que se esta ejecutando al cargar
+    //console.log("La página ha cargado completamente!"); // Mensaje para comprobar que se esta ejecutando al cargar
     try {
         LoadColumCategorias(); // Función que genera las categorías
         widgets.GenerarContenedorProductos(); // Función que genera los productos
@@ -38,7 +38,7 @@ export function ProductSearch() {
 
 export function ChangeSearch() {
     const searchQuery = document.getElementById("search").value; // Obtiene el texto mientras el usuario escribe
-    console.log("El texto de búsqueda cambió a: " + searchQuery);
+    //console.log("El texto de búsqueda cambió a: " + searchQuery);
 
     // CONSULTA AJAX
     if (searchQuery.length > 0) {  // Solo hacer la búsqueda si el término es mayor a 0 caracteres
@@ -63,7 +63,7 @@ export function ChangeSearch() {
 
 export function ClickButtonCategories(categoria) {
     const searchQuery = categoria; // Obtiene la categoria del boton clickeado
-    console.log("Categoria seleccionada: " + searchQuery);
+    //console.log("Categoria seleccionada: " + searchQuery);
 
     // CONSULTA AJAX
     if (searchQuery> 0) {  // Solo hacer la búsqueda si el término es mayor a 0 caracteres

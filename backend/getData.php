@@ -110,6 +110,24 @@ function getProductById($conn, $id_producto) {
     return $data;
 }
 
+// Función para obtener la imagen de un producto específico por ID
+function getImageProductById($conn, $id_producto) {
+    $sql = "SELECT IMAGE FROM CATALOGO WHERE ID_PRODUCTO = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id_producto);  // "i" significa un parámetro entero
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    $data = array();
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $data[] = $row;
+        }
+    }
+    
+    return $data;
+}
+
 // Función para obtener productos por su categoria
 function getProductByCategoria($conn, $id_categoria) {
     $sql = "SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, MARCA FROM CATALOGO WHERE ID_CATEGORIA = ?";
@@ -160,6 +178,9 @@ if (isset($_GET['action'])) {
     } elseif ($action == 'getProductById' && isset($_GET['id_producto'])) {
         $id_producto = mysqli_real_escape_string($conn, $_GET['id_producto']);
         $data = getProductById($conn, $id_producto);
+    }elseif ($action == 'getImageProductById' && isset($_GET['id_producto'])) {
+        $id_producto = mysqli_real_escape_string($conn, $_GET['id_producto']);
+        $data = getImageProductById($conn, $id_producto);
     }elseif ($action == 'getProductByCategoria' && isset($_GET['id_categoria'])) {
         $id_categoria = mysqli_real_escape_string($conn, $_GET['id_categoria']);
         $data = getProductByCategoria($conn, $id_categoria);
