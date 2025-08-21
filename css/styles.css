@@ -1,4 +1,7 @@
 @import url('var_colores.css');
+@import url('https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap');
+
+
 /* body{
     background: url('../img/tapete-metal.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -160,5 +163,11 @@ header {
   text-decoration: none;   /* También en hover */
 }
 
+.stilo-tittle{
+  font-family: 'Nata Sans', sans-serif;
+/*   font-weight: 900; */
+  color: var(--color-primario);
+/*   text-shadow: 2px 2px 4px rgba(0,0,0,0.5); */
+}
 
 
