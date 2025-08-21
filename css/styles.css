@@ -154,9 +154,17 @@ header {
 
 
 .txt-prod{
-  font-size: 15px;
+  font-size: 16px;
   text-decoration: none;   /* Solo quita el subrayado */
   color: #333;             /* Color personalizado */
+
+}
+.txt-prod-1{
+  font-size: 25px;
+  text-decoration: none;   /* Solo quita el subrayado */
+  color: #333;   
+  margin-bottom: 5%;          /* Color personalizado */
+   font-weight: 500;
 
 }
 .txt-prod:hover {

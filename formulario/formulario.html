@@ -12,10 +12,8 @@
     </head>
 </head>
 <body>
-    <!-- Navigation -->
     <div id="HeaderFormulario"></div>
     
-    <!-- Page Content -->
     <div class="container">
         <div class="card border-0 shadow my-5">
             <div class="card-body p-5">
@@ -23,30 +21,30 @@
                     
                     <div> <!-- Columna -->
                         <form>
-                            <h1>Genera tu Cotizacion</h1> <!-- Aquí se llenarán el producto seleccionado -->
+                            <p class="txt-prod-1 text-center">Ingresa tus datos para que nuestro personal reciba tu cotizacion</p> <!-- Aquí se llenarán el producto seleccionado -->
                             <div> <!-- Nombre -->
                                 <label for="NombreFormulario">Nombre</label>
                                 <input type="text" id="NombreFormulario" name="NombreFormulario" placeholder="Escribe tu nombre aqui" style="text-align: left;" autocomplete="name">
                             </div>
                             <div> <!-- Correo -->
                                 <label for="CorreoFormulario">Correo</label>
-                                <input type="email" id="CorreoFormulario" name="CorreoFormulario" placeholder="Escribe tu correo aqui" style="text-align: left;" autocomplete="name">
+                                <input type="email" id="CorreoFormulario" name="CorreoFormulario" placeholder="Escribe tu correo aqui" style="text-align: left;" autocomplete="mail">
                             </div>
                             <div> <!-- Telefono -->
                                 <label for="TelefonoFormulario">Telefono</label>
-                                <input type="tel" id="TelefonoFormulario" name="TelefonoFormulario" placeholder="Escribe tu telefono aqui" style="text-align: left;" autocomplete="name">
+                                <input type="tel" id="TelefonoFormulario" name="TelefonoFormulario" placeholder="Escribe tu telefono aqui" style="text-align: left;" autocomplete="phone">
                             </div>
                             <div> <!-- Direccion -->
                                 <label for="DireccionFormulario">Direccion</label>
-                                <input type="text" id="DireccionFormulario" name="DireccionFormulario" placeholder="Escribe tu direccion aqui" style="text-align: left;" autocomplete="name">
+                                <input type="text" id="DireccionFormulario" name="DireccionFormulario" placeholder="Escribe tu direccion aqui" style="text-align: left;" autocomplete="adress">
                             </div>
                             <div> <!-- Empresa -->
                                 <label for="EmpresaFormulario">Empresa</label>
-                                <input type="text" id="EmpresaFormulario" name="EmpresaFormulario" placeholder="Escribe tu Empresa aqui" style="text-align: left;" autocomplete="name">
+                                <input type="text" id="EmpresaFormulario" name="EmpresaFormulario" placeholder="Escribe tu Empresa aqui" style="text-align: left;" autocomplete="adress -level2">
                             </div>
                         </form>
                         <section class="button-group">
-                            <button type="button" id="BotonFormularioRegresar">Regresar al carrito</button>
+                            <button class="btn btn-danger" type="button" id="BotonFormularioRegresar">Regresar al carrito</button>
                             <button type="submit" id="BotonFormularioEnviar">Enviar</button>
                         </section>
                     </div>
