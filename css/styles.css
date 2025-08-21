@@ -148,3 +148,17 @@ header {
   font-size: 0.875rem;
   border-radius: 5px;
 }
+
+
+.txt-prod{
+  font-size: 15px;
+  text-decoration: none;   /* Solo quita el subrayado */
+  color: #333;             /* Color personalizado */
+
+}
+.txt-prod:hover {
+  text-decoration: none;   /* También en hover */
+}
+
+
+
