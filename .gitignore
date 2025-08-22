@@ -1,5 +1,7 @@
 credenciales.txt
 pruebas/
+img_prod/
 *.env
 vendor/composer/
 vendor/autoload.php
+
