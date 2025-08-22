@@ -33,6 +33,8 @@ export async function ColocarElCarritoEnLaPagina(descripcion) {
     /*const product = await controller.BuscarArticuloPorId(Articulos.Id); <-- version anterior sel codigo
     console.log(product);*/
 
+   /*  console.log(Articulos); */
+
     // validacion de la imagen del producto
     if (Articulos.Imagen == null || Articulos.Imagen == ' ') { // if (!product || !product.IMAGE)
       imagen = "../assets/default.jpg";

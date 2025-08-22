@@ -52,7 +52,7 @@ export function AgregarAlCarrito(){
         .then(response => response.json())
         .then(data => {
             if (data) {
-                //console.log("Datos obtenidos: ", data);
+           /*      console.log("Datos obtenidos: ", data); */
                 data.forEach(Articulo => {
                     Carrito.AgregarArticuloCarrito(Articulo.ID_PRODUCTO, Articulo.NOMBRE, 1, Articulo.IMAGE)
                 }); // Llamamos a la función que actualiza el DOM con los datos
