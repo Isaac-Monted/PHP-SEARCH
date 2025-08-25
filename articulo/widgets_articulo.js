@@ -43,7 +43,7 @@ export function updateProductDOM(products) {
             imagen = "../assets/default.jpg";
         } else {
             //console.log(product.IMAGE);
-            imagen = `https://riopisuena.com.mx/${product.IMAGE}`;
+            imagen = `https://riopisuena.mx/${product.IMAGE}`;
         }
 
         // Agregar contenido a la tarjeta del producto

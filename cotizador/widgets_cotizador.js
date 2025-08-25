@@ -40,7 +40,7 @@ export async function ColocarElCarritoEnLaPagina(descripcion) {
       imagen = "../assets/default.jpg";
     } else {
       //console.log(Articulos.Imagen);
-      imagen = `https://riopisuena.com.mx/${Articulos.Imagen}`;
+      imagen = `https://riopisuena.mx/${Articulos.Imagen}`;
     }
 
     // Agregar contenido a la tarjeta del producto
