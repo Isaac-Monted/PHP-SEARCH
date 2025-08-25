@@ -1,6 +1,8 @@
 import * as carrito from '../cotizador/script_cotizador.js';
 
 export async function ColocarNumeroCarrito() {
+    console.log('🧩 Power backend by: startec systems');
+
     const articulos  = await carrito.LeerArticuloCarrito();
     const contador = await esperarElementoPorId("numeroArticulosEnCarrito");
     //console.log(articulos);
@@ -42,4 +44,19 @@ export function esperarElementoPorId(id) {
 
         observer.observe(document.body, { childList: true, subtree: true });
     });
+}
+
+export async function ValidarImagenSerie(url, rutaPorDefecto) {
+    //console.log("→ ValidarImagenParalelo recibe URL:", url);
+
+    return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => resolve(url);
+        img.onerror = () => resolve(rutaPorDefecto);
+        img.src = url;
+    });
+}
+
+export async function ValidarImagenParalelo() {
+    
 }
