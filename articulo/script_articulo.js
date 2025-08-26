@@ -71,3 +71,14 @@ export function AgregarAlCarrito(){
             window.location.href = "../catalogo/catalogo.html"; // Redirige a la página principal.
         });
 }
+
+function imagenExiste(url) {
+  const img = new Image();
+  img.onload = function() {
+    callback(true); // La imagen cargó correctamente
+  };
+  img.onerror = function() {
+    callback(false); // Hubo un error al cargar la imagen
+  };
+  img.src = url;
+}

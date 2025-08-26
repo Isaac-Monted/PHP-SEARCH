@@ -4,7 +4,7 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 // Cargar las variables de entorno desde el archivo .env
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../..', 'credenciales.env');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../usuario', 'credenciales.env');
 $dotenv->load();
 
 // Activar el reporte de errores para depuración
