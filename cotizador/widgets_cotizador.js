@@ -50,7 +50,7 @@ export async function ColocarElCarritoEnLaPagina(descripcion) {
     //console.log(`Producto ID ${Articulos.Id} → URL final usada:`, urlImagen);
 
     // Agregar la promesa junto con los datos del articulo
-    const promesa = global.ValidarImagenParalelo(urlImagen, "../assets/default.jpg").then((imagenValida) => {
+    const promesa = global.ValidarImagenSerie(urlImagen, "../assets/default.jpg").then((imagenValida) => {
       return { Articulos, imagen: imagenValida };
     });
 
@@ -64,6 +64,8 @@ export async function ColocarElCarritoEnLaPagina(descripcion) {
   for (const { Articulos, imagen } of productosConImagenes) {
     const productCard = document.createElement("div");
     productCard.classList.add("container", "stilo-carrito", "txt-prod");
+
+    //console.log(imagen); // <- confirmar que la imagen exista
 
     // Protección adicional por si imagen vino mal (aunque no debería)
     const imagenFinal = typeof imagen === "string" && imagen.trim() !== ""
