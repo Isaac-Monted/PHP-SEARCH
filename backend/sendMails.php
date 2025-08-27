@@ -42,7 +42,9 @@ if ($cotizacion !== '') {
 // Lista de correos adicionales a los que también se les enviará el correo
 $correosAdicionales = [
     'isaacmonted072@gmail.com',
-    'rimora.29@gmail.com'
+    'rimora.29@gmail.com',
+    'blancaruiz@riopisuena.com.mx',
+    'jruiz@riopisuena.com.mx'
 ];
 
 // Crear una instancia de PHPMailer

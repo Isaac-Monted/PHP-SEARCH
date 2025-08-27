@@ -3,6 +3,14 @@ import * as controller from "./script_cotizador2.js";
 
 export async function ColocarElCarritoEnLaPagina(descripcion) {
   const CarritoContainer = document.getElementById("Descripcion-del-carrito");
+  CarritoContainer.classList.add("hidden"); // Fade-out
+
+  // Colocar la instancia del elemento ring-loader
+  const loader = document.getElementById("ring-loader");
+
+  // Mostrar el spinner antes de comenzar la carga
+  loader.style.display = "block";
+
   // Limpiar el carrito para yenarlo nuevamente
   CarritoContainer.innerHTML = "";
   //let imagen = ""; // Variable para guardar la imagen del producto
@@ -168,4 +176,8 @@ export async function ColocarElCarritoEnLaPagina(descripcion) {
 
     contador ++;
   }; // <-- )
+
+  // Al final de todo, cuando ya se renderizó todo:
+  loader.style.display = "none";
+  CarritoContainer.classList.remove("hidden"); // Fade-out
 }
