@@ -49,7 +49,7 @@ export async function updateProductDOM(products) {
             product.IMAGE.trim() !== "" &&
             product.IMAGE.trim().toLowerCase() !== "null"
         ) { // if (product.IMAGE == null || product.IMAGE == "")
-            urlImagen = `https://riopisuena.com.mx/${product.IMAGE}`;
+            urlImagen = `https://riopisuena.mx/${product.IMAGE}`;
         }
 
         //console.log(`Producto ID ${product.ID_PRODUCTO} → Imagen original:`, product.IMAGE);
