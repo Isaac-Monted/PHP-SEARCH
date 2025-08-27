@@ -52,7 +52,7 @@ $mail->CharSet = 'UTF-8';
 $mail->Encoding = 'base64';
 
 // Cargar las variables de entorno desde el archivo .env
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__, 'credenciales.env');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../usuario', 'credenciales.env');
 $dotenv->load();
 
 if (!isset($_ENV['CORREO_HOST'], $_ENV['CORREO_USER'], $_ENV['CORREO_PASS'])) {
