@@ -22,6 +22,8 @@ export async function ColocarElCarritoEnLaPagina(descripcion) {
   // Si no hay productos, mostrar un mensaje adecuado
   if (Object.keys(descripcion).length === 1 && descripcion["0"] !== undefined) {
     CarritoContainer.innerHTML = "<p>No se encontraron productos.</p>";
+    loader.style.display = "none";
+    CarritoContainer.classList.remove("hidden"); // Fade-out
     return;
   }
 
