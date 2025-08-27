@@ -26,6 +26,8 @@ export async function ColocarElCarritoEnLaPagina(descripcion) {
   
   for (const key of Object.keys(descripcion)) { // <- version anterior del codigo
     if (key === "0") continue;
+
+    //console.log(key);
     
     // se declaran las variables y se crean los contenedores
     const Articulos = descripcion[key]; // Aquí el objeto del producto
@@ -60,12 +62,17 @@ export async function ColocarElCarritoEnLaPagina(descripcion) {
   // Esperamos a que todas las validaciones terminen
   const productosConImagenes = await Promise.all(promesas);
 
+  // contador auxiliar para indexar bien los articulos
+  let contador = 1;
+
   // Ahora renderizamos todos
   for (const { Articulos, imagen } of productosConImagenes) {
+    const key = Object.keys(descripcion)[contador];
     const productCard = document.createElement("div");
     productCard.classList.add("container", "stilo-carrito", "txt-prod");
 
     //console.log(imagen); // <- confirmar que la imagen exista
+    //console.log(key);
 
     // Protección adicional por si imagen vino mal (aunque no debería)
     const imagenFinal = typeof imagen === "string" && imagen.trim() !== ""
@@ -74,46 +81,48 @@ export async function ColocarElCarritoEnLaPagina(descripcion) {
 
     //console.log(`🧩 Renderizando ID ${Articulos.Id} con imagen:`, imagenFinal);
 
-  // Agregar contenido a la tarjeta del producto
-  productCard.innerHTML = `
-  <div class="caja1">
+    //console.log(Articulos);
 
-      <div class="container">
-          <div class="row col-lg-12 mb-12">
+    // Agregar contenido a la tarjeta del producto
+    productCard.innerHTML = `
+    <div class="caja1">
 
-              <div class="col-12 col-md-4 text-center">
-                <a href="../articulo/articulo.html?id=${Articulos.Id}">
-                  <img src="${imagenFinal}" alt="Descripción de la imagen" style="width:40%; heigth:40%;" class="text-center">
-                </a>
-              </div>
-              <div class="col-12 col-md-2">
-                  <p class="text-left">Producto</p>
-                  <a href="../articulo/articulo.html?id=${Articulos.Id}" class="txt-prod">
-                    <p class="txt-prod">${Articulos.Nombre}</p>
+        <div class="container">
+            <div class="row col-lg-12 mb-12">
+
+                <div class="col-12 col-md-4 text-center">
+                  <a href="../articulo/articulo.html?id=${Articulos.Id}">
+                    <img src="${imagenFinal}" alt="Descripción de la imagen" style="width:40%; heigth:40%;" class="text-center">
                   </a>
-              </div>
+                </div>
+                <div class="col-12 col-md-2">
+                    <p class="text-left">Producto</p>
+                    <a href="../articulo/articulo.html?id=${Articulos.Id}" class="txt-prod">
+                      <p class="txt-prod">${Articulos.Nombre}</p>
+                    </a>
+                </div>
 
-              <div class="col-12 col-md-1">
+                <div class="col-12 col-md-1">
 
-                  <p class="text-center">Cantidad</p>
-                  <input class="casillaNumeros col-lg-4" type="text" id="Cantidad${Articulos.Id}"
-                      name="Cantidad${Articulos.Id}" value=${Articulos.Cantidad} style="text-align: center;" disabled>
-              </div>
+                    <p class="text-center">Cantidad</p>
+                    <input class="casillaNumeros col-lg-4" type="text" id="Cantidad${Articulos.Id}"
+                        name="Cantidad${Articulos.Id}" value=${Articulos.Cantidad} style="text-align: center;" disabled>
+                </div>
 
-              <div class="col-12 col-md-2 text-center" role="group" aria-label="Basic example">
-                  <p class="text-center">Cantidad</p>
-                  <button class="btn btn-primary" id="BotonDecremento${Articulos.Id}"> - </button>
-                  <button class="btn btn-primary" id="BotonIncremento${Articulos.Id}"> + </button>
-              </div>
+                <div class="col-12 col-md-2 text-center" role="group" aria-label="Basic example">
+                    <p class="text-center">Cantidad</p>
+                    <button class="btn btn-primary" id="BotonDecremento${Articulos.Id}"> - </button>
+                    <button class="btn btn-primary" id="BotonIncremento${Articulos.Id}"> + </button>
+                </div>
 
-              <div class="col-12 col-md-2">
-                  <p class="text-left">Opciones</p>
-                  <button class="btn btn-warning text-center" id="BotonQuitar${Articulos.Id}"> Quitar </button>
-              </div>
-          </div>
-      </div>
-  </div>
-  `;
+                <div class="col-12 col-md-2">
+                    <p class="text-left">Opciones</p>
+                    <button class="btn btn-warning text-center" id="BotonQuitar${Articulos.Id}"> Quitar </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
 
     // Agregar la tarjeta del producto al contenedor
     CarritoContainer.appendChild(productCard);
@@ -154,5 +163,7 @@ export async function ColocarElCarritoEnLaPagina(descripcion) {
       console.log("Quitar" + key);
       controller.QuitarArticuloDelCarrito(key);
     });
+
+    contador ++;
   }; // <-- )
 }
