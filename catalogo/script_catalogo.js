@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', async function() {
     // llenar la pagina con los datos
     OnLoadPage();
     global.ColocarNumeroCarrito();
+
+    // Colocar una familia aleatorea al cargar la pagina
+    let familiaAleatoria = numeroAleatorio(1,40);
+    ClickButtonCategories(familiaAleatoria);
 });
 
 
@@ -68,7 +72,7 @@ export function ClickButtonCategories(categoria) {
     // CONSULTA AJAX
     if (searchQuery> 0) {  // Solo hacer la búsqueda si el término es mayor a 0 caracteres
         // Hacer la solicitud GET al archivo PHP con el parámetro search_term
-        fetch(`../backend/getData.php?action=getProductByCategoria&id_categoria=${encodeURIComponent(searchQuery)}`)
+        fetch(`../backend/getData.php?action=getProductByFamilia&id_familia=${encodeURIComponent(searchQuery)}`)
             .then(response => response.json()) // Espera la respuesta como JSON
             .then(data => {
                 //console.log("Datos obtenidos: ", data);
@@ -84,3 +88,7 @@ export function ClickButtonCategories(categoria) {
         productContainer.innerHTML = '';
     }
 };
+
+function numeroAleatorio(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}

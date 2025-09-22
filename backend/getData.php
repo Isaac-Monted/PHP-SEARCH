@@ -12,11 +12,11 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Obtener las variables del archivo .env
-$servername = $_ENV['DB_HOST']; 
+$servername = $_ENV['DB_HOST'];
 $username = $_ENV['DB_USER'];
-$password = $_ENV['DB_PASS']; 
+$password = $_ENV['DB_PASS'];
 $dbname = $_ENV['DB_NAME'];
-$port = $_ENV['DB_PORT']; 
+$port = $_ENV['DB_PORT'];
 
 // Puerto por defecto de MySQL es 3306
 
@@ -129,6 +129,24 @@ function getImageProductById($conn, $id_producto) {
 }
 
 // Función para obtener productos por su categoria
+function getProductByFamilia($conn, $id_familia) {
+    $sql = "SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, MARCA FROM CATALOGO WHERE ID_FAMILIA = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id_familia);  // "i" significa un parámetro entero
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    $data = array();
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $data[] = $row;
+        }
+    }
+    
+    return $data;
+}
+
+// Función para obtener productos por su categoria
 function getProductByCategoria($conn, $id_categoria) {
     $sql = "SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, MARCA FROM CATALOGO WHERE ID_CATEGORIA = ?";
     $stmt = $conn->prepare($sql);
@@ -181,6 +199,9 @@ if (isset($_GET['action'])) {
     }elseif ($action == 'getImageProductById' && isset($_GET['id_producto'])) {
         $id_producto = mysqli_real_escape_string($conn, $_GET['id_producto']);
         $data = getImageProductById($conn, $id_producto);
+    }elseif ($action == 'getProductByFamilia' && isset($_GET['id_familia'])) {
+        $id_familia = mysqli_real_escape_string($conn, $_GET['id_familia']);
+        $data = getProductByFamilia($conn, $id_familia);
     }elseif ($action == 'getProductByCategoria' && isset($_GET['id_categoria'])) {
         $id_categoria = mysqli_real_escape_string($conn, $_GET['id_categoria']);
         $data = getProductByCategoria($conn, $id_categoria);
