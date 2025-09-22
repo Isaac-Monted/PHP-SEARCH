@@ -54,12 +54,9 @@ export async function updateProductDOM(products) {
 
         //console.log(`Producto ID ${product.ID_PRODUCTO} → Imagen original:`, product.IMAGE);
         //console.log(`Producto ID ${product.ID_PRODUCTO} → URL final usada:`, urlImagen);
-
         // Agregar la promesa junto con los datos del articulo
         const imagenValida = await global.ValidarImagenSerie(urlImagen, "../assets/default.jpg");
-
         //console.log(imagenValida); // <- confirmar que la imagen exista
-
         // Protección adicional por si imagen vino mal (aunque no debería)
         const imagenFinal = typeof imagenValida === "string" && imagenValida.trim() !== ""
         ? imagenValida
@@ -67,7 +64,7 @@ export async function updateProductDOM(products) {
 
         // Agregar contenido a la tarjeta del producto
         productCard.innerHTML = `
-            <div class="row gx-4 gx-lg-5 align-items-center">
+        <div class="row gx-4 gx-lg-5 align-items-center">
             <div class="col-md-6  text-center">
                 <h4>${product.NOMBRE}</h4>
                 <p class="text-justify">${product.DESCRIPCION}</p>
@@ -79,7 +76,31 @@ export async function updateProductDOM(products) {
                     <li class="list-group-item"><p class="text-left">Marca: </p> </li>
                     <li class="list-group-item">${marca}</li>
                 </ul>
+            </div>
+                    <div class="col-md-6"> <img src="${imagenFinal}" alt="Descripción de la imagen"
+                            style="width: 350px; heigth: 350px;">
+                    </div>
+        </div>
+`;
+        // Agregar la tarjeta del producto al contenedor   -> data:image/jpg;base64,
+        productContainer.appendChild(productCard);
+    }; // <-- )
+}
+/*    
+        <h3>${product.NOMBRE}</h3>
+        <p>${product.DESCRIPCION}</p>
+        <p>Codigo: ${product.CODIGO}</p>
+        <p>SKU: ${product.SKU}</p>
+        <p>Marca: ${marca}</p>
+        <p>Modelo: ${product.MODELO}</p>
+        
+            <ol class="list-group list-group-numbered">
+            <li class="list-group-item">Un elemento de lista</li>
+            <li class="list-group-item">Un elemento de lista</li>
+            <li class="list-group-item">Un elemento de lista</li>
+            </ol>
 
+            tabla de descripcion de las medidas de un producto
                 <table class="table">
                     <thead>
                         <tr>
@@ -98,29 +119,4 @@ export async function updateProductDOM(products) {
                         </tr>
                     </tbody>
                 </table>
-
-            </div>
-                    <div class="col-md-6"> <img src="${imagenFinal}" alt="Descripción de la imagen"
-                            style="width: 350px; heigth: 350px;"></div>
-                    </div>
-`;
-        // Agregar la tarjeta del producto al contenedor   -> data:image/jpg;base64,
-        productContainer.appendChild(productCard);
-    }; // <-- )
-}
-
-
-/*    
-        <h3>${product.NOMBRE}</h3>
-        <p>${product.DESCRIPCION}</p>
-        <p>Codigo: ${product.CODIGO}</p>
-        <p>SKU: ${product.SKU}</p>
-        <p>Marca: ${marca}</p>
-        <p>Modelo: ${product.MODELO}</p>
-        
-            <ol class="list-group list-group-numbered">
-            <li class="list-group-item">Un elemento de lista</li>
-            <li class="list-group-item">Un elemento de lista</li>
-            <li class="list-group-item">Un elemento de lista</li>
-            </ol>
 */
