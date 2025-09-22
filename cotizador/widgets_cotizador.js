@@ -49,6 +49,8 @@ export async function ColocarElCarritoEnLaPagina(descripcion) {
     //buscar la imagen del producto
     let urlImagen = '../assets/default.jpg';
 
+   /*  console.log(Articulos); */
+
     // validacion de la imagen del producto
     if (
       typeof Articulos.Imagen === "string" &&

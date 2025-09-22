@@ -13,49 +13,44 @@
 </head>
 <body>
     <div id="HeaderFormulario"></div>
-    
     <div class="container">
         <div class="card border-0 shadow my-5">
             <div class="card-body p-5">
                 <div class="container"> <!-- Contenedor principal -->
-                    
                     <div> <!-- Columna -->
                         <form>
-                            <p class="txt-prod-1 text-center">Ingresa tus datos para que nuestro personal reciba tu cotizacion</p> <!-- Aquí se llenarán el producto seleccionado -->
+                            <p class="txt-prod-1 text-center">Ingresa tus datos para que nuestro personal especializado reciba tu cotizacion</p> <!-- Aquí se llenarán el producto seleccionado -->
                             <div> <!-- Nombre -->
-                                <label for="NombreFormulario">Nombre</label>
-                                <input type="text" id="NombreFormulario" name="NombreFormulario" placeholder="Escribe tu nombre aqui" style="text-align: left;" autocomplete="name">
+                                <label for="NombreFormulario">Tu Nombre</label>
+                                <input type="text" id="NombreFormulario" name="NombreFormulario" placeholder="" style="text-align: left;" autocomplete="name">
                             </div>
                             <div> <!-- Correo -->
-                                <label for="CorreoFormulario">Correo</label>
-                                <input type="email" id="CorreoFormulario" name="CorreoFormulario" placeholder="Escribe tu correo aqui" style="text-align: left;" autocomplete="email">
+                                <label for="CorreoFormulario">Correo electronico</label>
+                                <input type="email" id="CorreoFormulario" name="CorreoFormulario" placeholder="" style="text-align: left;" autocomplete="email">
                             </div>
                             <div> <!-- Telefono -->
                                 <label for="TelefonoFormulario">Telefono</label>
-                                <input type="tel" id="TelefonoFormulario" name="TelefonoFormulario" placeholder="Escribe tu telefono aqui" style="text-align: left;" autocomplete="tel">
+                                <input type="tel" id="TelefonoFormulario" name="TelefonoFormulario" placeholder="" style="text-align: left;" autocomplete="tel">
                             </div>
                             <div> <!-- Direccion -->
                                 <label for="DireccionFormulario">Direccion</label>
-                                <input type="text" id="DireccionFormulario" name="DireccionFormulario" placeholder="Escribe tu direccion aqui" style="text-align: left;" autocomplete="street-address">
+                                <input type="text" id="DireccionFormulario" name="DireccionFormulario" placeholder="" style="text-align: left;" autocomplete="street-address">
                             </div>
                             <div> <!-- Empresa -->
-                                <label for="EmpresaFormulario">Empresa</label>
-                                <input type="text" id="EmpresaFormulario" name="EmpresaFormulario" placeholder="Escribe tu Empresa aqui" style="text-align: left;" autocomplete="organization">
+                                <label for="EmpresaFormulario">Nombre de la Empresa</label>
+                                <input type="text" id="EmpresaFormulario" name="EmpresaFormulario" placeholder="En caso de pertenecer a una empresa" style="text-align: left;" autocomplete="organization">
                             </div>
                         </form>
                         <section class="button-group">
-                            <button class="btn btn-warning" type="button" id="BotonFormularioRegresar">Regresar al carrito</button>
-                            <button class="btn btn-success" type="submit" id="BotonFormularioEnviar">Enviar</button>
+                              <button class="btn btn-success" type="submit" id="BotonFormularioEnviar">Enviar</button>                            <button class="btn btn-warning" type="button" id="BotonFormularioRegresar">Regresar al carrito</button>   
                         </section>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
     <footer id="FooterFormulario"></footer>
 </body>
-
 <script type="module">
     import * as Carrito from './script_formulario.js';
     document.getElementById("BotonFormularioRegresar").addEventListener("click", function() {
@@ -65,7 +60,6 @@
         Carrito.FuncionBotonEnviarCotizacion();
     })
 </script>
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>
