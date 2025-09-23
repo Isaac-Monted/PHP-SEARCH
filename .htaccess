@@ -25,3 +25,8 @@ ErrorDocument 403 /FIERROS/error/403.html
 ErrorDocument 500 /FIERROS/error/500.html
 
 </IfModule>
+
+# Bloquear acceso al archivo .env
+<FilesMatch "^\.env$">
+    Require all denied
+</FilesMatch>
