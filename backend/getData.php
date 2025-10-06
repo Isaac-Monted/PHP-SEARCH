@@ -130,7 +130,7 @@ function getImageProductById($conn, $id_producto) {
 
 // Función para obtener productos por su categoria
 function getProductByFamilia($conn, $id_familia) {
-    $sql = "SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, MARCA FROM CATALOGO WHERE ID_FAMILIA = ?";
+    $sql = "SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, MARCA, IMAGE FROM CATALOGO WHERE ID_FAMILIA = ? LIMIT 100";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id_familia);  // "i" significa un parámetro entero
     $stmt->execute();
@@ -148,7 +148,7 @@ function getProductByFamilia($conn, $id_familia) {
 
 // Función para obtener productos por su categoria
 function getProductByCategoria($conn, $id_categoria) {
-    $sql = "SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, MARCA FROM CATALOGO WHERE ID_CATEGORIA = ?";
+    $sql = "SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, MARCA, IMAGE FROM CATALOGO WHERE ID_CATEGORIA = ? LIMIT 100";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id_categoria);  // "i" significa un parámetro entero
     $stmt->execute();
@@ -166,7 +166,7 @@ function getProductByCategoria($conn, $id_categoria) {
 
 // Función para obtener productos con búsqueda aproximada
 function searchProductos($conn, $search_term) {
-    $sql = "SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, MARCA FROM CATALOGO WHERE NOMBRE LIKE ? LIMIT 100";
+    $sql = "SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, MARCA, IMAGE FROM CATALOGO WHERE NOMBRE LIKE ? LIMIT 100";
     $stmt = $conn->prepare($sql);
     $search_term = "%" . $search_term . "%";  // Se utiliza el % para hacer una búsqueda con LIKE
     $stmt->bind_param("s", $search_term);  // "s" significa un parámetro de tipo string
