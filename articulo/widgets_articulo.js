@@ -29,7 +29,7 @@ export async function updateProductDOM(products) {
     }
 
     // Recorrer los productos y crear elementos para mostrarlos
-    for (const product of products) { // roducts.forEach((product) =>
+    for (const product of products) { // products.forEach((product) =>
         const productCard = document.createElement("div");
         productCard.classList.add("product-cards-article-only");
 
@@ -37,7 +37,7 @@ export async function updateProductDOM(products) {
         let urlImagen = '../assets/default.jpg';
 
         // Validacion de la infortmacion que se mostrara en el DOM
-        if (product.MARCA == "UNDEFINED") {
+        if (product.MARCA == "UNDEFINED" || product.MARCA == null) {
             marca = "Sin marca";
         } else {
             marca = product.MARCA;
@@ -78,7 +78,7 @@ export async function updateProductDOM(products) {
                 </ul>
             </div>
                     <div class="col-md-6"> <img src="${imagenFinal}" alt="Descripción de la imagen"
-                            style="width: 350px; heigth: 350px;">
+                            style="width: 70%; heigth: 70%;">
                     </div>
         </div>
 `;

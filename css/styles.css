@@ -202,3 +202,8 @@ header {
   100% { transform: rotate(360deg); }
 }
 
+.noHyperText {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}

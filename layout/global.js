@@ -47,7 +47,7 @@ export function esperarElementoPorId(id) {
 }
 
 export async function ValidarImagenSerie(url, rutaPorDefecto) {
-    console.log("→ ValidarImagenParalelo recibe URL:", url);
+    //console.log("→ ValidarImagenParalelo recibe URL:", url);
 
     return new Promise((resolve) => {
         const img = new Image();
