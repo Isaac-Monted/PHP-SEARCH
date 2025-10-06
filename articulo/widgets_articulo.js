@@ -37,7 +37,7 @@ export async function updateProductDOM(products) {
         let urlImagen = '../assets/default.jpg';
 
         // Validacion de la infortmacion que se mostrara en el DOM
-        if (product.MARCA == "UNDEFINED") {
+        if (product.MARCA == "UNDEFINED" || product.MARCA == null) {
             marca = "Sin marca";
         } else {
             marca = product.MARCA;

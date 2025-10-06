@@ -89,8 +89,8 @@ export async function updateDOMWithProducts(products) {
         // Buscar la imagen del producto
         let urlImagen = '../assets/default.jpg';
         // Validar la marca
-        if (product.MARCA == "UNDEFINED"){
-            marca = ""
+        if (product.MARCA == "UNDEFINED" || product.MARCA == null){
+            marca = "Sin marca";
         }else{
             marca = product.MARCA
         }
@@ -122,7 +122,7 @@ export async function updateDOMWithProducts(products) {
                 <a href="../articulo/articulo.html?id=${product.ID_PRODUCTO}"><img class="card-img-top" src="${imagenFinal}" alt="Descripción de la imagen"></a>
                 <div class="card-body">
                     <h4 class="card-title">
-                        <a href="../articulo/articulo.html?id=${product.ID_PRODUCTO}">${product.NOMBRE}</a>
+                        <a class="noHyperText" href="../articulo/articulo.html?id=${product.ID_PRODUCTO}">${product.NOMBRE}</a>
                     </h4>
                     <p class="card-text">${product.DESCRIPCION}</p>
                     <p class="card-text">Marca: ${marca}</p>
