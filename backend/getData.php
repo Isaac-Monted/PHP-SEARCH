@@ -130,7 +130,7 @@ function getImageProductById($conn, $id_producto) {
 
 // Función para obtener productos por su categoria
 function getProductByFamilia($conn, $id_familia) {
-    $sql = "SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, MARCA, IMAGE FROM CATALOGO WHERE ID_FAMILIA = ? LIMIT 100";
+    $sql = "SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, MARCA, IMAGE FROM CATALOGO WHERE ID_FAMILIA = ? LIMIT 20";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id_familia);  // "i" significa un parámetro entero
     $stmt->execute();
@@ -148,7 +148,7 @@ function getProductByFamilia($conn, $id_familia) {
 
 // Función para obtener productos por su categoria
 function getProductByCategoria($conn, $id_categoria) {
-    $sql = "SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, MARCA, IMAGE FROM CATALOGO WHERE ID_CATEGORIA = ? LIMIT 100";
+    $sql = "SELECT ID_PRODUCTO, NOMBRE, DESCRIPCION, MARCA, IMAGE FROM CATALOGO WHERE ID_CATEGORIA = ? LIMIT 20";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id_categoria);  // "i" significa un parámetro entero
     $stmt->execute();
