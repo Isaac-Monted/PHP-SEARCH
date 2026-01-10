@@ -207,3 +207,312 @@ header {
   text-decoration: none;
   font-weight: bold;
 }
+
+
+
+        :root {
+            --primary-color: #8a4fff;
+            --secondary-color: #ff6b8b;
+            --accent-color: #4fc3f7;
+            --dark-color: #333333;
+            --light-color: #f8f9fa;
+            --gradient-primary: linear-gradient(135deg, #8a4fff 0%, #4fc3f7 100%);
+            --gradient-secondary: linear-gradient(135deg, #ff6b8b 0%, #ffa726 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-color);
+            line-height: 1.6;
+            background-color: #f5f7ff;
+        }
+
+
+        .invitation-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin-top: -1%;
+        }
+        
+        .header-section {
+            background: var(--gradient-primary);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            
+        }
+        
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .header-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-section p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            opacity: 0.9;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+        
+        .content-section {
+            padding: 3rem 2.5rem;
+        }
+        
+        .intro-text {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            color: #555;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .highlight-box {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 20px rgba(255, 107, 139, 0.2);
+        }
+        
+        .highlight-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .catalog-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+           
+        }
+        
+        .detail-item {
+            flex: 1;
+            min-width: 200px;
+            text-align: left;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background-color: #f9f9ff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .detail-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .detail-item i {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .detail-item h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        .btn-access {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(138, 79, 255, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-access:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(138, 79, 255, 0.4);
+            color: white;
+        }
+        
+        .footer-section {
+            background-color: #2c2c54;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            margin-top: 1rem;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .countdown-item {
+            background-color: white;
+            color: var(--dark-color);
+            padding: 1rem;
+            border-radius: 10px;
+            min-width: 80px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+        
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #777;
+        }
+        
+        .features-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 2rem 0;
+        }
+        
+        .features-list li {
+            padding: 0.7rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+        }
+        
+        .features-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
+            width: 24px;
+            height: 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .countdown {
+                flex-wrap: wrap;
+            }
+            
+            .detail-item {
+                min-width: 100%;
+            }
+        }
