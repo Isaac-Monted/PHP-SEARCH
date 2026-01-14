@@ -14,7 +14,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <div id="HeaderMain"></div>
+  <!-- <div id="HeaderMain"></div>
   <div class="container">
     <h1 class="my-4">Bienvenido a nuestro
       <small>Catalogo</small>
@@ -22,9 +22,6 @@
     <div class="row">
       <div class="col-md-8">
         <img src="../img/img-ini.png" class="img-fluid edit-img" alt="Imagen de inicio">
-    <!--     <video muted="" autoplay="" loop="" class="edit-img" src="../assets/videos/vid-pisuena.MOV" type="video/mp4"
-          width="100%" height="100%" playsinline>
-        </video> -->
       </div>
       <div class="col-md-4">
         <h3 class="my-3">Cotizador Eléctronico</h3>
@@ -44,6 +41,7 @@
           onclick="window.location.href='../catalogo/catalogo.html'">Ir al Catalogo</button>
       </div>
     </div>
+
     <h3 class="my-4 text-center">- Siempre buscando la satisfacción del cliente -</h3>
     <div class="row">
       <div class="col-md-3 col-sm-6 mb-4">
@@ -66,11 +64,93 @@
           <img class="img-fluid edit-img" src="../img/sierra-web.png" alt="">
         </a>
       </div>
-    </div>
-  </div>
-  <footer id="FooterMain"></footer>
-</body>
+    </div> -->
+<!--   </div>
+  <footer id="FooterMain"></footer>  -->
+<div id="HeaderMain"></div>
+  <div class="invitation-container">
+        <!-- Cabecera -->
+        <div class="header-section">
+                                   <!-- Botón de acceso -->
+                  
+           
+            <h1 class="txt-titulo">Catálogo Electrónico Exclusivo</h1>
+            <p class="text-justify txt-titulo">En Ferretera Rio Pisueña podras encontrar una amplia variedad de artículos, agregarlos al carrito y recibir una cotizacion en tu correo electronico</p>
+             <div class="logo">
+              <!--   <i class="fa fa-shopping-bag" aria-hidden="true"></i> -->
+                 <button type="button" class="text-center btn-access text-center mt-4"
+              onclick="window.location.href='../catalogo/catalogo.html'">Ir al Catalogo</button>  
+            </div>
+        
+            
+       <!--    <button type="button" class="btn btn-warning btn-lg text-center"
+                onclick="window.location.href='../catalogo/catalogo.html'">Ir al Catalogo</button> -->
 
+                <!-- <a href="https://google.com" class="btn-access" id="accessBtn">
+                    <i class="fas fa-arrow-right me-2"></i> Acceder al Catálogo
+                </a> -->
+        </div>
+        <!-- Contenido principal -->
+        <div class="content-section">
+            <!-- Detalles del catálogo -->
+            <div class="catalog-details">
+                <div class="detail-item">
+                    <i class="fas fa-shopping-bag"></i>
+                    <h4>+10,000 Productos</h4>
+                    <p>Novedades y exclusivos</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-tags"></i>
+                    <h4>Siempre buscando la satisfaccion del cliente</h4>
+                   <!--  <p>Descuentos hasta 40%</p> -->
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h4>Envío Gratis</h4>
+                    <p>En pedidos superiores a $1,500.00 en el interior de CDMX y Edo. de Mexico</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="mb-4">Categorias en la Industria</h3>
+                    <ul class="features-list">
+                        <li>Herramienta Eléctrica</li>
+                        <li>Herramienta Inalámbrica</li>
+                        <li>Herramienta de Mano</li>
+                        <li>Aceros y Perfiles</li>
+                        <li>Tubería</li>
+                        <li>Escaleras</li>
+                        <li>Plomería y mucho mas ...</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="mb-4">Ferretera Rio Pisueña</h3>
+                  <p class="text-justify txt-descripcion">
+                    Con 33 años de experiencía, dedicada a la comercialización de todo tipo de artículos de ferretería, proporcionando el mejor y más rápido servicio a todos nuestros clientes.
+                  </p> 
+                         <!-- Botón de acceso -->
+                  <button type="button" class="text-center btn-access text-center mt-4"
+              onclick="window.location.href='../catalogo/catalogo.html'">Ir al Catalogo</button>  
+                </div>
+            </div>
+        </div>
+        <div class="footer-section">
+            <p>¿Tienes preguntas? Estamos aquí para ayudarte</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/ferreriopisuena/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/ferreterariopisuena/"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>ventas@riopisuena.com.mx | <i class="fas fa-phone mr-3"></i> 55 5850 0140  | <i class="fab fa-whatsapp"></i> 55 9199 6245</p>
+            <div class="footer-links">
+                <a href="#">Política de Privacidad</a> | 
+                <a href="#">Términos de Uso</a> | 
+                <a href="#">Configuración de Correo</a>
+            </div>
+            <p class="mt-3 small">© 2026 Ferretera Rio Pisueña | Todos los derechos reservados.</p>
+        </div>
+    </div>
+</body>
 <script>
   async function cargarHTML(id, url) {
     const res = await fetch(url);
@@ -85,9 +165,14 @@
   import * as Carrito from './script_main.js';
 </script>
 
+
+
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+
+
 
 </html>
